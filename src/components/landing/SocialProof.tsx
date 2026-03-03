@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     quote: "I staked credits on my club and won a signed shirt from a live auction. Wildest Tuesday ever.",
-    name: "Marco D.",
+    name: "Marco, Italy",
     sport: "Football fan",
   },
   {
     quote: "Courtside tickets through loyalty points? Not a single dollar spent beyond my fan credits. This is unreal.",
-    name: "Jasmine T.",
-    sport: "NBA fan",
+    name: "Jasmine, USA",
+    sport: "Basketball fan",
   },
   {
-    quote: "I've been supporting my fighter for years. Finally a platform that lets me prove it and get rewarded for it.",
-    name: "Alex R.",
-    sport: "UFC fan",
+    quote: "I've been supporting my team for years. Finally a platform that lets me prove it and get rewarded for it.",
+    name: "Alex, France",
+    sport: "Rugby fan",
   },
 ];
 

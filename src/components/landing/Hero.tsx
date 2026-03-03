@@ -71,7 +71,7 @@ export default function Hero() {
             Ultrafans
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-foreground/80 font-body">
-            The platform where sports fans unlock real experiences
+            Where sports fans unlock real experiences<br />
             with the teams they love.
           </p>
         </motion.div>
