@@ -7,10 +7,10 @@ import athleteUfc from "@/assets/athlete-ufc.jpg";
 import fansCheering from "@/assets/fans-cheering.jpg";
 
 const floatingProfiles = [
-{ img: athleteSoccer, name: "Carlos M.", fans: "12.4K fans", className: "top-[15%] left-[8%] float-1" },
-{ img: athleteBasketball, name: "Jay W.", fans: "8.9K fans", className: "top-[10%] right-[10%] float-2" },
-{ img: athleteNfl, name: "Marcus T.", fans: "15.1K fans", className: "bottom-[25%] left-[5%] float-3 hidden md:block" },
-{ img: athleteUfc, name: "Viktor K.", fans: "6.7K fans", className: "bottom-[20%] right-[8%] float-4" },
+{ img: athleteSoccer, name: "Carlos M.", fans: "12.4K football fans", className: "top-[15%] left-[8%] float-1" },
+{ img: athleteBasketball, name: "Jay W.", fans: "8.9K NBA fans", className: "top-[10%] right-[10%] float-2" },
+{ img: athleteNfl, name: "Marcus T.", fans: "15.1K NFL fans", className: "bottom-[25%] left-[5%] float-3 hidden md:block" },
+{ img: athleteUfc, name: "Viktor K.", fans: "6.7K Rugby fans", className: "bottom-[20%] right-[8%] float-4" },
 { img: fansCheering, name: "Fan Club", fans: "23.4K fans", className: "top-[45%] left-[15%] float-5 hidden lg:block" }];
 
 
@@ -64,15 +64,15 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
           
-          <span className="inline-block font-display text-sm md:text-base font-bold tracking-widest uppercase mb-6 bg-foreground/10 px-4 py-2 rounded-full">COMING SOON
+          <span className="inline-block font-display text-sm md:text-base font-bold tracking-widest uppercase mb-6 bg-foreground/10 px-4 py-2 rounded-full">EARLY ACCESS
 
           </span>
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
             Ultrafans
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-foreground/80 font-body">
-            The platform where sports fans unlock real access and experiences
-            with the teams they love — not just watch from the stands.
+            The platform where sports fans unlock real experiences
+            with the teams they love.
           </p>
         </motion.div>
 

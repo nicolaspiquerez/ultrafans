@@ -21,8 +21,12 @@ const testimonials = [
 ];
 
 const marqueeItems = [
-  "Football", "Basketball", "NFL", "UFC", "Boxing", "La Liga", "Premier League",
-  "Serie A", "Champions League", "NBA", "MLS", "Bundesliga", "And what comes next"
+  "Football",
+  "Basketball",
+  "Rugby",
+  "Hockey",
+  "Baseball",
+  "American Football",
 ];
 
 export default function SocialProof() {

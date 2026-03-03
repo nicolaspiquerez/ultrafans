@@ -104,8 +104,6 @@ export default function FooterSection() {
           )}
         </div>
         <p className="font-body text-xs text-brand-white/20 mb-2">© 2026 Ultrafans. All rights reserved.</p>
-        <p className="font-body text-sm text-brand-white/30">Go make some noise.
-
         </p>
       </div>
     </footer>);

@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 
 const steps = [
   {
-    icon: "⚡",
+    icon: "💛",
     title: "Back your team",
     desc: "Buy your club's fan credits and become a verified supporter. Every purchase goes directly to the team you love.",
   },
   {
-    icon: "🔥",
+    icon: "⭐",
     title: "Stake and earn",
     desc: "Stake your fan credits to start earning loyalty points every day. The longer you hold, the more points you stack.",
   },
@@ -52,9 +52,6 @@ export default function HowItWorks() {
               className="relative text-center p-8 rounded-2xl bg-brand-yellow/10 border-2 border-brand-yellow/20 hover:border-brand-yellow/50 transition-colors group"
             >
               <div className="text-5xl mb-5">{step.icon}</div>
-              <span className="absolute top-4 right-4 font-display text-7xl font-bold text-brand-dark/5 select-none">
-                {i + 1}
-              </span>
               <h3 className="font-display text-xl font-bold mb-3 text-brand-dark">{step.title}</h3>
               <p className="font-body text-brand-dark/70 leading-relaxed">{step.desc}</p>
             </motion.div>

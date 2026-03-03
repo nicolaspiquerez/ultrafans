@@ -89,7 +89,7 @@ export default function FeatureShowcase() {
           transition={{ duration: 0.6 }}
           className="font-display text-4xl md:text-5xl font-bold text-center mb-16 text-brand-dark"
         >
-          Built for superfans
+          Built for ultra fans
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8">
