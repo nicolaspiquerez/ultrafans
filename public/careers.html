@@ -51,6 +51,36 @@
     .fade-5 { animation: fadeUp 0.6s ease-out 0.48s both; }
     .fade-6 { animation: fadeUp 0.6s ease-out 0.6s both; }
 
+    /* Lang toggle */
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--dark);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      border: none;
+      user-select: none;
+    }
+    .lang-toggle .lang-opt {
+      color: rgba(255,225,53,0.4);
+      transition: color 0.2s;
+    }
+    .lang-toggle .lang-opt.active {
+      color: hsl(50,100%,60%);
+    }
+    .lang-toggle .lang-sep {
+      color: rgba(255,255,255,0.2);
+    }
+
     /* Brand header */
     .brand {
       text-align: center;
@@ -336,6 +366,13 @@
 </head>
 <body>
 
+  <!-- Language Toggle -->
+  <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+    <span class="lang-opt" id="opt-fr">FR</span>
+    <span class="lang-sep">|</span>
+    <span class="lang-opt active" id="opt-en">EN</span>
+  </button>
+
   <main class="page">
 
     <!-- Brand -->
@@ -343,13 +380,13 @@
       <a href="/" class="wordmark">ULTRAFANS</a>
     </header>
     <div class="tagline fade-1">
-      <span class="tagline-pill">Now Hiring</span>
+      <span class="tagline-pill" id="tagline-pill">Now Hiring</span>
     </div>
 
     <!-- Hero -->
     <section class="hero fade-2">
-      <h1>Join the team building the future of fan engagement.</h1>
-      <p>We're a small, fast-moving team based at Station F in Paris. We ship weekly and care deeply about the product.</p>
+      <h1 id="hero-h1">Join the team building the future of fan engagement.</h1>
+      <p id="hero-p">We're a small, fast-moving team based at Station F in Paris. We ship weekly and care deeply about the product.</p>
     </section>
 
     <!-- Jobs -->
@@ -358,14 +395,14 @@
       <!-- Backend Engineer -->
       <div class="job fade-3">
         <div class="job-header">
-          <h2 class="job-title">Backend Engineer</h2>
-          <span class="job-badge">Now Hiring</span>
+          <h2 class="job-title" id="job1-title">Backend Engineer</h2>
+          <span class="job-badge" id="job1-badge">Now Hiring</span>
         </div>
         <div class="job-meta">
-          <span>Paris, France (Station F)</span>
-          <span>Full-time</span>
+          <span id="job1-location">Paris, France (Station F)</span>
+          <span id="job1-type">Full-time</span>
         </div>
-        <p class="job-desc">
+        <p class="job-desc" id="job1-desc">
           You'll own the backend infrastructure powering fan credits, staking, auctions, and club dashboards.
           We need someone who can design clean APIs, think about scale from day one, and ship fast in a startup that's still finding product-market fit.
         </p>
@@ -382,14 +419,14 @@
       <!-- Head of Community & Growth -->
       <div class="job fade-4">
         <div class="job-header">
-          <h2 class="job-title">Head of Community &amp; Growth</h2>
-          <span class="job-badge">Now Hiring</span>
+          <h2 class="job-title" id="job2-title">Head of Community &amp; Growth</h2>
+          <span class="job-badge" id="job2-badge">Now Hiring</span>
         </div>
         <div class="job-meta">
-          <span>Paris, France (Station F)</span>
-          <span>Full-time</span>
+          <span id="job2-location">Paris, France (Station F)</span>
+          <span id="job2-type">Full-time</span>
         </div>
-        <p class="job-desc">
+        <p class="job-desc" id="job2-desc">
           You'll build and lead our community strategy from zero. That means growing our waitlist, managing social channels, creating content that resonates with football fans, and forging relationships with fan groups and clubs across Europe.
         </p>
         <div class="job-tags">
@@ -407,8 +444,8 @@
     <!-- Info -->
     <section class="info fade-5">
       <div class="info-card">
-        <h3>Don't see your role?</h3>
-        <p>We're always looking for people who are passionate about sports and building things. Send us a note and tell us what you'd bring to the team.</p>
+        <h3 id="info-h3">Don't see your role?</h3>
+        <p id="info-p">We're always looking for people who are passionate about sports and building things. Send us a note and tell us what you'd bring to the team.</p>
         <a href="mailto:careers@ultrafans.co">careers@ultrafans.co</a>
       </div>
     </section>
@@ -416,10 +453,79 @@
     <!-- Footer -->
     <footer class="fade-6">
       <p class="foot-brand">ULTRAFANS</p>
-      <p class="copy">&copy; 2026 UltraFans. Paris, France.</p>
+      <p class="copy" id="foot-copy">&copy; 2026 UltraFans. Paris, France.</p>
     </footer>
 
   </main>
+
+  <script>
+    var currentLang = 'en';
+    var translations = {
+      en: {
+        taglinePill: 'Now Hiring',
+        heroH1: 'Join the team building the future of fan engagement.',
+        heroP: 'We\'re a small, fast-moving team based at Station F in Paris. We ship weekly and care deeply about the product.',
+        job1Title: 'Backend Engineer',
+        job1Badge: 'Now Hiring',
+        job1Location: 'Paris, France (Station F)',
+        job1Type: 'Full-time',
+        job1Desc: 'You\'ll own the backend infrastructure powering fan credits, staking, auctions, and club dashboards. We need someone who can design clean APIs, think about scale from day one, and ship fast in a startup that\'s still finding product-market fit.',
+        job2Title: 'Head of Community &amp; Growth',
+        job2Badge: 'Now Hiring',
+        job2Location: 'Paris, France (Station F)',
+        job2Type: 'Full-time',
+        job2Desc: 'You\'ll build and lead our community strategy from zero. That means growing our waitlist, managing social channels, creating content that resonates with football fans, and forging relationships with fan groups and clubs across Europe.',
+        infoH3: 'Don\'t see your role?',
+        infoP: 'We\'re always looking for people who are passionate about sports and building things. Send us a note and tell us what you\'d bring to the team.',
+        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+      },
+      fr: {
+        taglinePill: 'On recrute',
+        heroH1: 'Rejoignez l\'équipe qui construit l\'avenir de l\'engagement fan.',
+        heroP: 'Nous sommes une petite équipe rapide basée à Station F à Paris. Nous livrons chaque semaine et nous soucions profondément du produit.',
+        job1Title: 'Ingénieur Backend',
+        job1Badge: 'On recrute',
+        job1Location: 'Paris, France (Station F)',
+        job1Type: 'Temps plein',
+        job1Desc: 'Vous prendrez en charge l\'infrastructure backend alimentant les crédits fan, le staking, les enchères et les tableaux de bord des clubs. Nous avons besoin de quelqu\'un capable de concevoir des APIs propres, de penser à l\'échelle dès le début et de livrer vite dans une startup encore en phase de découverte produit.',
+        job2Title: 'Responsable Communauté &amp; Croissance',
+        job2Badge: 'On recrute',
+        job2Location: 'Paris, France (Station F)',
+        job2Type: 'Temps plein',
+        job2Desc: 'Vous construirez et dirigerez notre stratégie communautaire depuis zéro. Cela inclut la croissance de notre liste d\'attente, la gestion des réseaux sociaux, la création de contenu qui résonne avec les fans de football et la création de relations avec les groupes de supporters et les clubs à travers l\'Europe.',
+        infoH3: 'Vous ne voyez pas votre poste ?',
+        infoP: 'Nous cherchons toujours des personnes passionnées par le sport et la création. Envoyez-nous un message et dites-nous ce que vous apporteriez à l\'équipe.',
+        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+      }
+    };
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      document.getElementById('opt-en').classList.toggle('active', currentLang === 'en');
+      document.getElementById('opt-fr').classList.toggle('active', currentLang === 'fr');
+      applyTranslations();
+    }
+
+    function applyTranslations() {
+      var t = translations[currentLang];
+      document.getElementById('tagline-pill').innerHTML = t.taglinePill;
+      document.getElementById('hero-h1').innerHTML = t.heroH1;
+      document.getElementById('hero-p').innerHTML = t.heroP;
+      document.getElementById('job1-title').innerHTML = t.job1Title;
+      document.getElementById('job1-badge').innerHTML = t.job1Badge;
+      document.getElementById('job1-location').innerHTML = t.job1Location;
+      document.getElementById('job1-type').innerHTML = t.job1Type;
+      document.getElementById('job1-desc').innerHTML = t.job1Desc;
+      document.getElementById('job2-title').innerHTML = t.job2Title;
+      document.getElementById('job2-badge').innerHTML = t.job2Badge;
+      document.getElementById('job2-location').innerHTML = t.job2Location;
+      document.getElementById('job2-type').innerHTML = t.job2Type;
+      document.getElementById('job2-desc').innerHTML = t.job2Desc;
+      document.getElementById('info-h3').innerHTML = t.infoH3;
+      document.getElementById('info-p').innerHTML = t.infoP;
+      document.getElementById('foot-copy').innerHTML = t.footCopy;
+    }
+  </script>
 
 </body>
 </html>

@@ -55,6 +55,36 @@
     .fade-6 { animation: fadeUp 0.6s ease-out 0.6s both; }
     .fade-7 { animation: fadeUp 0.6s ease-out 0.72s both; }
 
+    /* Lang toggle */
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--dark);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      border: none;
+      user-select: none;
+    }
+    .lang-toggle .lang-opt {
+      color: rgba(255,225,53,0.4);
+      transition: color 0.2s;
+    }
+    .lang-toggle .lang-opt.active {
+      color: hsl(50,100%,60%);
+    }
+    .lang-toggle .lang-sep {
+      color: rgba(255,255,255,0.2);
+    }
+
     /* Brand header */
     .brand {
       text-align: center;
@@ -430,6 +460,13 @@
 </head>
 <body>
 
+  <!-- Language Toggle -->
+  <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+    <span class="lang-opt" id="opt-fr">FR</span>
+    <span class="lang-sep">|</span>
+    <span class="lang-opt active" id="opt-en">EN</span>
+  </button>
+
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close">ESC</button>
@@ -443,13 +480,13 @@
       <span class="wordmark">ULTRAFANS</span>
     </header>
     <div class="tagline fade-1">
-      <span class="tagline-pill">About Us</span>
+      <span class="tagline-pill" id="tagline-pill">About Us</span>
     </div>
 
     <!-- Mission -->
     <section class="mission fade-2">
-      <h1>New revenue for football clubs.<br />Powered by fandom.</h1>
-      <p>We're building the <span class="highlight">fan engagement infrastructure</span> that helps football clubs turn their most passionate supporters into a new revenue channel.</p>
+      <h1 id="mission-h1">New revenue for football clubs.<br />Powered by fandom.</h1>
+      <p id="mission-p">We're building the <span class="highlight">fan engagement infrastructure</span> that helps football clubs turn their most passionate supporters into a new revenue channel.</p>
     </section>
 
     <!-- Founders -->
@@ -460,7 +497,7 @@
         <img src="/ben-photo.jpeg" alt="Ben" class="photo" onclick="openLightbox(this)" />
         <p class="name">Ben</p>
         <span class="title">CO-FOUNDER</span>
-        <p class="bio">ESADE MBA. Entrepreneur. Former Financial Manager. Convinced that the most loyal fans in the stadium are also the biggest untapped revenue line. Poussez!</p>
+        <p class="bio" id="ben-bio">ESADE MBA. Entrepreneur. Former Financial Manager. Convinced that the most loyal fans in the stadium are also the biggest untapped revenue line. Poussez!</p>
         <a href="mailto:ben@ultrafans.co" class="email">ben@ultrafans.co</a>
       </div>
 
@@ -469,7 +506,7 @@
         <img src="/nick-photo.jpeg" alt="Nicolas" class="photo" onclick="openLightbox(this)" />
         <p class="name">Nicolas</p>
         <span class="title">CO-FOUNDER</span>
-        <p class="bio">Built tech at the intersection of regulation and sport. Formerly at ANJ, working on international gambling and sports betting policy. Won the PSG Stadium Hackathon. Football is not a hobby, it's a lifestyle.</p>
+        <p class="bio" id="nick-bio">Built tech at the intersection of regulation and sport. Formerly at ANJ, working on international gambling and sports betting policy. Won the PSG Stadium Hackathon. Football is not a hobby, it's a lifestyle.</p>
         <a href="mailto:nick@ultrafans.co" class="email">nick@ultrafans.co</a>
       </div>
 
@@ -479,7 +516,7 @@
     <div class="badge-wrap fade-4">
       <div class="badge">
         <span class="icon">🚀</span>
-        <span>Founders in Residence with Pioneers VC at <strong>Station F, Paris</strong></span>
+        <span id="badge-text">Founders in Residence with Pioneers VC at <strong>Station F, Paris</strong></span>
       </div>
     </div>
 
@@ -490,18 +527,61 @@
 
     <!-- CTA -->
     <div class="cta-wrap fade-6">
-      <a href="mailto:partner@ultrafans.co" class="cta-btn">Get in touch now &rarr;</a>
+      <a href="mailto:partner@ultrafans.co" class="cta-btn" id="cta-btn">Get in touch now &rarr;</a>
     </div>
 
     <!-- Footer -->
     <footer class="fade-7">
       <p class="foot-brand">ULTRAFANS</p>
-      <p class="copy">&copy; 2026 UltraFans. Paris, France.</p>
+      <p class="copy" id="foot-copy">&copy; 2026 UltraFans. Paris, France.</p>
     </footer>
 
   </main>
 
   <script>
+    var currentLang = 'en';
+    var translations = {
+      en: {
+        taglinePill: 'About Us',
+        missionH1: 'New revenue for football clubs.<br />Powered by fandom.',
+        missionP: 'We\'re building the <span class="highlight">fan engagement infrastructure</span> that helps football clubs turn their most passionate supporters into a new revenue channel.',
+        benBio: 'ESADE MBA. Entrepreneur. Former Financial Manager. Convinced that the most loyal fans in the stadium are also the biggest untapped revenue line. Poussez!',
+        nickBio: 'Built tech at the intersection of regulation and sport. Formerly at ANJ, working on international gambling and sports betting policy. Won the PSG Stadium Hackathon. Football is not a hobby, it\'s a lifestyle.',
+        badgeText: 'Founders in Residence with Pioneers VC at <strong>Station F, Paris</strong>',
+        ctaBtn: 'Get in touch now &rarr;',
+        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+      },
+      fr: {
+        taglinePill: 'À propos',
+        missionH1: 'Nouveaux revenus pour les clubs de foot.<br />Propulsés par le fandom.',
+        missionP: 'Nous construisons l\'<span class="highlight">infrastructure d\'engagement fan</span> qui aide les clubs de football à transformer leurs supporters les plus passionnés en une nouvelle source de revenus.',
+        benBio: 'MBA ESADE. Entrepreneur. Ancien directeur financier. Convaincu que les fans les plus fidèles du stade sont aussi la plus grande opportunité de revenus inexploitée. Poussez !',
+        nickBio: 'A construit la tech à l\'intersection de la réglementation et du sport. Ancien à l\'ANJ, travaillant sur la politique internationale des jeux d\'argent et des paris sportifs. Vainqueur du Hackathon Stade PSG. Le football n\'est pas un hobby, c\'est un mode de vie.',
+        badgeText: 'Fondateurs en résidence avec Pioneers VC à <strong>Station F, Paris</strong>',
+        ctaBtn: 'Contactez-nous maintenant &rarr;',
+        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+      }
+    };
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      document.getElementById('opt-en').classList.toggle('active', currentLang === 'en');
+      document.getElementById('opt-fr').classList.toggle('active', currentLang === 'fr');
+      applyTranslations();
+    }
+
+    function applyTranslations() {
+      var t = translations[currentLang];
+      document.getElementById('tagline-pill').innerHTML = t.taglinePill;
+      document.getElementById('mission-h1').innerHTML = t.missionH1;
+      document.getElementById('mission-p').innerHTML = t.missionP;
+      document.getElementById('ben-bio').innerHTML = t.benBio;
+      document.getElementById('nick-bio').innerHTML = t.nickBio;
+      document.getElementById('badge-text').innerHTML = t.badgeText;
+      document.getElementById('cta-btn').innerHTML = t.ctaBtn;
+      document.getElementById('foot-copy').innerHTML = t.footCopy;
+    }
+
     function openLightbox(img) {
       var lb = document.getElementById('lightbox');
       var lbImg = document.getElementById('lightbox-img');

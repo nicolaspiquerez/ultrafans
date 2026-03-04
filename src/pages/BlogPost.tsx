@@ -26,7 +26,7 @@ export default function BlogPost() {
             <Link to="/blog" className="font-display text-sm font-bold text-brand-white/60 hover:text-brand-white transition-colors uppercase tracking-widest">
               {t("blog.heading")}
             </Link>
-            <LanguageToggle />
+            <LanguageToggle dark />
           </div>
         </div>
       </header>

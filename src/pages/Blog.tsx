@@ -16,7 +16,7 @@ export default function Blog() {
           </Link>
           <div className="flex items-center gap-4">
             <span className="font-display text-sm font-bold text-brand-white/60 uppercase tracking-widest">{t("blog.heading")}</span>
-            <LanguageToggle />
+            <LanguageToggle dark />
           </div>
         </div>
       </header>
