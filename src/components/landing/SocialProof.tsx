@@ -41,7 +41,7 @@ export default function SocialProof() {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 overflow-hidden brand-gradient">
+    <section ref={ref} className="py-16 sm:py-24 md:py-32 overflow-hidden brand-gradient">
       <div className="max-w-5xl mx-auto px-6">
         {/* Counter */}
         <motion.div
@@ -51,21 +51,21 @@ export default function SocialProof() {
           className="text-center mb-16"
         >
           <p className="font-body text-brand-dark/60 text-sm uppercase tracking-widest mb-2">Fans on the waitlist</p>
-          <p className="font-display text-6xl md:text-7xl font-bold text-brand-dark">
+          <p className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-brand-dark">
             {count.toLocaleString()}
           </p>
           <p className="font-body text-brand-dark/50 text-sm mt-2">and counting...</p>
         </motion.div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
-              className="bg-brand-white rounded-2xl p-6 border border-brand-dark/5"
+              className="bg-brand-white rounded-2xl p-4 sm:p-6 border border-brand-dark/5"
             >
               <p className="font-body text-brand-dark/80 mb-4 leading-relaxed">"{t.quote}"</p>
               <div>
@@ -79,9 +79,9 @@ export default function SocialProof() {
 
       {/* Marquee */}
       <div className="relative py-4 overflow-hidden">
-        <div className="marquee flex whitespace-nowrap gap-8">
+        <div className="marquee flex whitespace-nowrap gap-4 sm:gap-8">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="font-display text-2xl md:text-3xl font-bold text-brand-dark/15">
+            <span key={i} className="font-display text-lg sm:text-2xl md:text-3xl font-bold text-brand-dark/15">
               {item} •
             </span>
           ))}
