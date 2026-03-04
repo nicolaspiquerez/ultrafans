@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "badge": "EARLY ACCESS",
+    "title": "Ultrafans",
+    "subtitle": "Where sports fans unlock real experiences",
+    "subtitleLine2": "with the teams they love.",
+    "emailPlaceholder": "your@email.com",
+    "cta": "Get Early Access",
+    "successTitle": "You're on the roster!",
+    "successSubtitle": "We'll be in touch before kickoff.",
+    "profiles": {
+      "carlosFans": "12.4K football fans",
+      "jayFans": "8.9K NBA fans",
+      "marcusFans": "15.1K NFL fans",
+      "viktorFans": "6.7K Rugby fans",
+      "fanClubName": "Fan Club",
+      "fanClubFans": "23.4K Hockey fans"
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Three steps. Zero complexity. Maximum fandom.",
+    "step1Title": "Back your team",
+    "step1Desc": "Buy your club's fan credits and become a verified supporter. Every purchase goes directly to the team you love.",
+    "step2Title": "Stake and earn",
+    "step2Desc": "Stake your fan credits to start earning loyalty points every day. The longer you hold, the more points you stack.",
+    "step3Title": "Bid on unforgettable moments",
+    "step3Desc": "Spend your points in live auctions for real-world rewards: VIP match tickets, signed shirts, travel with the squad, and meet-the-player sessions."
+  },
+  "features": {
+    "title": "Built for the fans",
+    "fan": {
+      "tag": "Fan Credits",
+      "title": "Your team. Your stake.",
+      "desc": "Buy your club's fan credits with a card in seconds \u2014 no complexity. Hold more credits, earn more points daily. Your balance is your rank in the fan hierarchy.",
+      "mockTeam": "FC United",
+      "mockLabel": "Fan Credit",
+      "mockBalance": "Your Balance",
+      "mockDailyPoints": "daily points"
+    },
+    "staking": {
+      "tag": "Points & Staking",
+      "title": "Hold to earn. Earn to win.",
+      "desc": "Stake your fan credits to generate loyalty points automatically. Points don't expire \u2014 they stack up waiting for the next auction. The more committed, the bigger your war chest.",
+      "mockTotalPoints": "Total Points",
+      "mockChartLabel": "Points earned (12 weeks)"
+    },
+    "auction": {
+      "tag": "Rewards Auction",
+      "title": "One winner. Real rewards.",
+      "desc": "Bid your points in live auctions for experiences money can't normally buy: VIP match tickets, signed shirts, travel with the squad, or a private meet-and-greet.",
+      "mockLive": "LIVE",
+      "mockItem": "Signed Match Shirt",
+      "mockTopBid": "Top bid",
+      "mockTopBidValue": "4,200 pts",
+      "mockEndsIn": "Ends in",
+      "mockPlaceBid": "Place Bid"
+    }
+  },
+  "sports": {
+    "title": "Your favorite sport teams",
+    "subtitle": "Earn real experiences with more sports and more rewards.",
+    "football": "Football",
+    "footballTagline": "From local matches to cup finals.",
+    "basketball": "Basketball",
+    "basketballTagline": "Courtside without the price tag.",
+    "americanFootball": "American Football",
+    "americanFootballTagline": "Tailgate culture, digitized.",
+    "rugby": "Rugby",
+    "rugbyTagline": "Scrum down and show up.",
+    "hockey": "Hockey",
+    "hockeyTagline": "From the rink to the roster.",
+    "baseball": "Baseball",
+    "baseballTagline": "Every pitch, every fan."
+  },
+  "socialProof": {
+    "waitlistLabel": "Fans on the waitlist",
+    "andCounting": "and counting...",
+    "testimonial1Quote": "I staked credits on my club and won a signed shirt from a live auction. Wildest Tuesday ever.",
+    "testimonial1Name": "Marco, Italy",
+    "testimonial1Sport": "Football fan",
+    "testimonial2Quote": "Courtside tickets through loyalty points? Not a single dollar spent beyond my fan credits. This is unreal.",
+    "testimonial2Name": "Jasmine, USA",
+    "testimonial2Sport": "Basketball fan",
+    "testimonial3Quote": "I've been supporting my team for years. Finally a platform that lets me prove it and get rewarded for it.",
+    "testimonial3Name": "Alex, France",
+    "testimonial3Sport": "Rugby fan",
+    "marquee": {
+      "football": "Football",
+      "basketball": "Basketball",
+      "rugby": "Rugby",
+      "hockey": "Hockey",
+      "baseball": "Baseball",
+      "americanFootball": "American Football"
+    }
+  },
+  "partner": {
+    "titleLine1": "Fan engagement",
+    "titleLine2": "for sport teams.",
+    "subtitle": "Everything you need to connect with your ultrafans and create unforgettable experiences.",
+    "prop1Title": "Your own fan credit, live in a day",
+    "prop1Desc": "Issue your team's fan credit with one click. Set supply, manage distribution \u2014 we handle all the infrastructure. No technical team required.",
+    "prop2Title": "Full fan visibility",
+    "prop2Desc": "Connect to all your ultrafans in one dashboard. Know who your most committed supporters actually are, not just your biggest social media accounts.",
+    "prop3Title": "Run real experiences, not just content",
+    "prop3Desc": "Create auction experiences directly from your admin panel \u2014 add a date, location, and number of seats.",
+    "trustedBy": "Trusted by clubs",
+    "partnerCta": "Partner With Us \u2192"
+  },
+  "fold": {
+    "title": "Are you a club?",
+    "subtitle": "Ultrafans is made for you. Contact-us at team@ultrafans.co"
+  },
+  "footer": {
+    "title": "Join the waitlist",
+    "subtitle": "Get early access before the whistle blows.",
+    "imClub": "I'm a Club",
+    "imFan": "I'm a Fan",
+    "errorSelectType": "Please select whether you're a club or a fan.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "emailPlaceholder": "your@email.com",
+    "cta": "Get Early Access",
+    "successFanTitle": "You're on the roster!",
+    "successClubTitle": "We'll be in touch!",
+    "successFanSubtitle": "We'll reach out before kickoff.",
+    "successClubSubtitle": "Our partnerships team will contact you within 48 hours.",
+    "brand": "Ultrafans",
+    "aboutUs": "About Us",
+    "about": "About",
+    "careers": "Careers",
+    "blog": "Blog",
+    "twitter": "X (Twitter)",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "copyright": "\u00a9 2026 Ultrafans. All rights reserved."
+  },
+  "notFound": {
+    "code": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  }
+}

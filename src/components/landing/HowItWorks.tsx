@@ -1,26 +1,28 @@
 import { useInView } from "@/hooks/useInView";
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    icon: "💛",
-    title: "Back your team",
-    desc: "Buy your club's fan credits and become a verified supporter. Every purchase goes directly to the team you love.",
-  },
-  {
-    icon: "⭐",
-    title: "Stake and earn",
-    desc: "Stake your fan credits to start earning loyalty points every day. The longer you hold, the more points you stack.",
-  },
-  {
-    icon: "🏆",
-    title: "Bid on unforgettable moments",
-    desc: "Spend your points in live auctions for real-world rewards: VIP match tickets, signed shirts, travel with the squad, and meet-the-player sessions.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function HowItWorks() {
   const { ref, isInView } = useInView();
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      icon: "💛",
+      title: t("howItWorks.step1Title"),
+      desc: t("howItWorks.step1Desc"),
+    },
+    {
+      icon: "⭐",
+      title: t("howItWorks.step2Title"),
+      desc: t("howItWorks.step2Desc"),
+    },
+    {
+      icon: "🏆",
+      title: t("howItWorks.step3Title"),
+      desc: t("howItWorks.step3Desc"),
+    },
+  ];
 
   return (
     <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-brand-white">
@@ -31,7 +33,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-4 text-brand-dark"
         >
-          How it works
+          {t("howItWorks.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +41,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center text-brand-dark/60 font-body text-base sm:text-lg mb-10 sm:mb-16 max-w-xl mx-auto"
         >
-          Three steps. Zero complexity. Maximum fandom.
+          {t("howItWorks.subtitle")}
         </motion.p>
 
         <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">

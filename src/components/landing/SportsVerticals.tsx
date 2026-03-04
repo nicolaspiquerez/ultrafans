@@ -1,5 +1,6 @@
 import { useInView } from "@/hooks/useInView";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import athleteSoccer from "@/assets/athlete-soccer.jpg";
 import athleteBasketball from "@/assets/athlete-basketball.jpg";
 import athleteNfl from "@/assets/athlete-nfl.jpg";
@@ -7,17 +8,18 @@ import athleteRugby from "@/assets/athlete-rugby.jpg";
 import athleteHockey from "@/assets/athlete-hockey.jpg";
 import athleteBaseball from "@/assets/athlete-baseball.jpg";
 
-const sports = [
-  { img: athleteSoccer, sport: "Football", tagline: "From local matches to cup finals.", emoji: "⚽" },
-  { img: athleteBasketball, sport: "Basketball", tagline: "Courtside without the price tag.", emoji: "🏀" },
-  { img: athleteNfl, sport: "American Football", tagline: "Tailgate culture, digitized.", emoji: "🏈" },
-  { img: athleteRugby, sport: "Rugby", tagline: "Scrum down and show up.", emoji: "🏉" },
-  { img: athleteHockey, sport: "Hockey", tagline: "From the rink to the roster.", emoji: "🏒" },
-  { img: athleteBaseball, sport: "Baseball", tagline: "Every pitch, every fan.", emoji: "⚾" },
-];
-
 export default function SportsVerticals() {
   const { ref, isInView } = useInView();
+  const { t } = useTranslation();
+
+  const sports = [
+    { img: athleteSoccer, sport: t("sports.football"), tagline: t("sports.footballTagline"), emoji: "⚽" },
+    { img: athleteBasketball, sport: t("sports.basketball"), tagline: t("sports.basketballTagline"), emoji: "🏀" },
+    { img: athleteNfl, sport: t("sports.americanFootball"), tagline: t("sports.americanFootballTagline"), emoji: "🏈" },
+    { img: athleteRugby, sport: t("sports.rugby"), tagline: t("sports.rugbyTagline"), emoji: "🏉" },
+    { img: athleteHockey, sport: t("sports.hockey"), tagline: t("sports.hockeyTagline"), emoji: "🏒" },
+    { img: athleteBaseball, sport: t("sports.baseball"), tagline: t("sports.baseballTagline"), emoji: "⚾" },
+  ];
 
   return (
     <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-brand-white">
@@ -28,7 +30,7 @@ export default function SportsVerticals() {
           transition={{ duration: 0.6 }}
           className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-4 text-brand-dark"
         >
-          Your favorite sport teams
+          {t("sports.title")}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +38,7 @@ export default function SportsVerticals() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center text-brand-dark/60 font-body text-base sm:text-lg mb-10 sm:mb-16 max-w-xl mx-auto"
         >
-          Earn real experiences with more sports and more rewards.
+          {t("sports.subtitle")}
         </motion.p>
 
         {/* Horizontal scroll on mobile, grid on desktop */}

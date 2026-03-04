@@ -1,26 +1,28 @@
 import { useInView } from "@/hooks/useInView";
 import { motion } from "framer-motion";
-
-const valueProps = [
-  {
-    icon: "🚀",
-    title: "Your own fan credit, live in a day",
-    desc: "Issue your team's fan credit with one click. Set supply, manage distribution — we handle all the infrastructure. No technical team required.",
-  },
-  {
-    icon: "📊",
-    title: "Full fan visibility",
-    desc: "Connect to all your ultrafans in one dashboard. Know who your most committed supporters actually are, not just your biggest social media accounts.",
-  },
-  {
-    icon: "🎟️",
-    title: "Run real experiences, not just content",
-    desc: "Create auction experiences directly from your admin panel — add a date, location, and number of seats.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function PartnerSection() {
   const { ref, isInView } = useInView();
+  const { t } = useTranslation();
+
+  const valueProps = [
+    {
+      icon: "🚀",
+      title: t("partner.prop1Title"),
+      desc: t("partner.prop1Desc"),
+    },
+    {
+      icon: "📊",
+      title: t("partner.prop2Title"),
+      desc: t("partner.prop2Desc"),
+    },
+    {
+      icon: "🎟️",
+      title: t("partner.prop3Title"),
+      desc: t("partner.prop3Desc"),
+    },
+  ];
 
   return (
     <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 dark-gradient dark-section">
@@ -31,9 +33,9 @@ export default function PartnerSection() {
           transition={{ duration: 0.6 }}
           className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-4 text-brand-white"
         >
-          Fan engagement
+          {t("partner.titleLine1")}
           <br />
-          <span className="text-brand-yellow">for sport teams.</span>
+          <span className="text-brand-yellow">{t("partner.titleLine2")}</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -41,14 +43,14 @@ export default function PartnerSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center text-brand-white/50 font-body text-base sm:text-lg mb-10 sm:mb-16 max-w-xl mx-auto"
         >
-          Everything you need to connect with your ultrafans and create unforgettable experiences.
+          {t("partner.subtitle")}
         </motion.p>
 
         <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-20">
           {valueProps.map((v, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }} 
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
               className="p-5 sm:p-8 rounded-2xl bg-brand-white/5 border border-brand-white/10 hover:border-brand-yellow/30 transition-colors"
@@ -60,24 +62,6 @@ export default function PartnerSection() {
           ))}
         </div>
 
-        {/* Partner logos placeholder */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center"
-        >
-          <p className="font-body text-sm text-brand-white/30 mb-6 uppercase tracking-widest">
-            You are a sport club ?
-          </p>
-
-          <a
-            href="mailto:partner@ultrafans.co"
-            className="inline-block mt-12 px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 hover:glow-yellow"
-          >
-            Or email us at partner@ultrafans.co →
-          </a>
-        </motion.div>
       </div>
     </section>
   );

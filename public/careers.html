@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ULTRAFANS - Careers</title>
+  <meta name="description" content="Join Ultrafans. We're hiring." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --yellow: hsl(50, 100%, 60%);
+      --yellow-light: hsl(50, 100%, 70%);
+      --dark: hsl(240, 33%, 14%);
+      --white: hsl(50, 100%, 97%);
+    }
+
+    body {
+      background: linear-gradient(160deg, var(--yellow) 0%, var(--yellow-light) 40%, var(--yellow) 100%);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-1 { animation: fadeUp 0.6s ease-out 0s both; }
+    .fade-2 { animation: fadeUp 0.6s ease-out 0.12s both; }
+    .fade-3 { animation: fadeUp 0.6s ease-out 0.24s both; }
+    .fade-4 { animation: fadeUp 0.6s ease-out 0.36s both; }
+    .fade-5 { animation: fadeUp 0.6s ease-out 0.48s both; }
+    .fade-6 { animation: fadeUp 0.6s ease-out 0.6s both; }
+
+    /* Brand header */
+    .brand {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .wordmark {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--dark);
+      opacity: 0.4;
+      text-decoration: none;
+    }
+
+    .wordmark:hover {
+      opacity: 0.7;
+    }
+
+    .tagline {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .tagline-pill {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--dark);
+      color: var(--yellow);
+      padding: 8px 20px;
+      border-radius: 100px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--dark);
+      opacity: 0.65;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Job cards */
+    .jobs {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .job {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 32px 32px 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+
+    .job:hover {
+      transform: perspective(1000px) rotateY(-1deg) rotateX(1deg) scale(1.01);
+      box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.12);
+    }
+
+    .job-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--dark);
+    }
+
+    .job-badge {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--yellow);
+      color: var(--dark);
+      padding: 5px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .job-meta span {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--dark);
+      opacity: 0.45;
+    }
+
+    .job-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--dark);
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+
+    .job-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .job-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--dark);
+      opacity: 0.5;
+      background: rgba(0, 0, 0, 0.04);
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .job-apply {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--yellow);
+      background: var(--dark);
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .job-apply:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .job-apply:active {
+      transform: scale(0.98);
+    }
+
+    /* Info section */
+    .info {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    .info-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .info-card p {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--dark);
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+
+    .info-card a {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--dark);
+      opacity: 0.5;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .info-card a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    footer .foot-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 3px;
+      color: var(--dark);
+      opacity: 0.15;
+      margin-bottom: 6px;
+    }
+
+    footer .copy {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--dark);
+      opacity: 0.2;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .page {
+        padding: 48px 20px 40px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .job {
+        padding: 24px 22px 24px;
+      }
+
+      .job-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .job-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="page">
+
+    <!-- Brand -->
+    <header class="brand fade-1">
+      <a href="/" class="wordmark">ULTRAFANS</a>
+    </header>
+    <div class="tagline fade-1">
+      <span class="tagline-pill">Now Hiring</span>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero fade-2">
+      <h1>Join the team building the future of fan engagement.</h1>
+      <p>We're a small, fast-moving team based at Station F in Paris. We ship weekly and care deeply about the product.</p>
+    </section>
+
+    <!-- Jobs -->
+    <section class="jobs">
+
+      <!-- Backend Engineer -->
+      <div class="job fade-3">
+        <div class="job-header">
+          <h2 class="job-title">Backend Engineer</h2>
+          <span class="job-badge">Now Hiring</span>
+        </div>
+        <div class="job-meta">
+          <span>Paris, France (Station F)</span>
+          <span>Full-time</span>
+        </div>
+        <p class="job-desc">
+          You'll own the backend infrastructure powering fan credits, staking, auctions, and club dashboards.
+          We need someone who can design clean APIs, think about scale from day one, and ship fast in a startup that's still finding product-market fit.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Node.js / TypeScript</span>
+          <span class="job-tag">PostgreSQL</span>
+          <span class="job-tag">REST / GraphQL</span>
+          <span class="job-tag">Firebase</span>
+          <span class="job-tag">Cloud Infrastructure</span>
+        </div>
+        <a href="mailto:careers@ultrafans.co?subject=Backend%20Engineer%20%E2%80%93%20Application" class="job-apply">Apply now &rarr;</a>
+      </div>
+
+      <!-- Head of Community & Growth -->
+      <div class="job fade-4">
+        <div class="job-header">
+          <h2 class="job-title">Head of Community &amp; Growth</h2>
+          <span class="job-badge">Now Hiring</span>
+        </div>
+        <div class="job-meta">
+          <span>Paris, France (Station F)</span>
+          <span>Full-time</span>
+        </div>
+        <p class="job-desc">
+          You'll build and lead our community strategy from zero. That means growing our waitlist, managing social channels, creating content that resonates with football fans, and forging relationships with fan groups and clubs across Europe.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Community Building</span>
+          <span class="job-tag">Social Media</span>
+          <span class="job-tag">Content Strategy</span>
+          <span class="job-tag">Sports / Football</span>
+          <span class="job-tag">Growth Marketing</span>
+        </div>
+        <a href="mailto:careers@ultrafans.co?subject=Head%20of%20Community%20%26%20Growth%20%E2%80%93%20Application" class="job-apply">Apply now &rarr;</a>
+      </div>
+
+    </section>
+
+    <!-- Info -->
+    <section class="info fade-5">
+      <div class="info-card">
+        <h3>Don't see your role?</h3>
+        <p>We're always looking for people who are passionate about sports and building things. Send us a note and tell us what you'd bring to the team.</p>
+        <a href="mailto:careers@ultrafans.co">careers@ultrafans.co</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-6">
+      <p class="foot-brand">ULTRAFANS</p>
+      <p class="copy">&copy; 2026 UltraFans. Paris, France.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
