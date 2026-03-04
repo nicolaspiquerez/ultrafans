@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { blogPosts } from "@/data/blogPosts";
+import LanguageToggle from "@/components/landing/LanguageToggle";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -21,9 +22,12 @@ export default function BlogPost() {
           <Link to="/" className="font-display text-xl font-bold text-brand-yellow hover:opacity-80 transition-opacity">
             UltraFans
           </Link>
-          <Link to="/blog" className="font-display text-sm font-bold text-brand-white/60 hover:text-brand-white transition-colors uppercase tracking-widest">
-            {t("blog.heading")}
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/blog" className="font-display text-sm font-bold text-brand-white/60 hover:text-brand-white transition-colors uppercase tracking-widest">
+              {t("blog.heading")}
+            </Link>
+            <LanguageToggle />
+          </div>
         </div>
       </header>
 

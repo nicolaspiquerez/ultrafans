@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { blogPosts } from "@/data/blogPosts";
+import LanguageToggle from "@/components/landing/LanguageToggle";
 
 export default function Blog() {
   const { t, i18n } = useTranslation();
@@ -13,7 +14,10 @@ export default function Blog() {
           <Link to="/" className="font-display text-xl font-bold text-brand-yellow hover:opacity-80 transition-opacity">
             UltraFans
           </Link>
-          <span className="font-display text-sm font-bold text-brand-white/60 uppercase tracking-widest">{t("blog.heading")}</span>
+          <div className="flex items-center gap-4">
+            <span className="font-display text-sm font-bold text-brand-white/60 uppercase tracking-widest">{t("blog.heading")}</span>
+            <LanguageToggle />
+          </div>
         </div>
       </header>
 
