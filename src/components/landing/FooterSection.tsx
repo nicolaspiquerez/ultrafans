@@ -11,6 +11,7 @@ export default function FooterSection() {
   const [email, setEmail] = useState("");
   const [type, setType] = useState<"fan" | "club" | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const handleTypeSelect = (selected: "fan" | "club") => {
@@ -26,6 +27,7 @@ export default function FooterSection() {
     }
     if (!email.trim()) return;
 
+    setLoading(true);
     try {
       await addWaitlistEntry(email.trim(), type);
       setSubmitted(true);
@@ -55,6 +57,8 @@ export default function FooterSection() {
     } catch (err) {
       console.error("Waitlist error:", err);
       setError(t("footer.errorGeneric"));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -119,9 +123,17 @@ export default function FooterSection() {
                 />
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+                  disabled={loading}
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 active:scale-95 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  {t("footer.cta")}
+                  {loading ? (
+                    <svg className="animate-spin h-5 w-5 mx-auto text-brand-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                  ) : (
+                    t("footer.cta")
+                  )}
                 </button>
               </form>
             </>

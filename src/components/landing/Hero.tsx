@@ -14,6 +14,7 @@ export default function Hero() {
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const floatingProfiles = [
     { img: athleteSoccer, name: "Carlos M.", fans: t("hero.profiles.carlosFans"), className: "top-[15%] left-[8%] float-1" },
@@ -26,6 +27,7 @@ export default function Hero() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (email.trim()) {
+      setLoading(true);
       try {
         await addWaitlistEntry(email.trim(), "fan");
         setSubmitted(true);
@@ -53,6 +55,8 @@ export default function Hero() {
         }, 300);
       } catch (err) {
         console.error("Waitlist error:", err);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -155,9 +159,17 @@ export default function Hero() {
 
               <button
               type="submit"
-              className="px-8 py-4 rounded-xl bg-brand-dark font-display font-bold text-brand-white text-base transition-all hover:scale-105 hover:shadow-2xl active:scale-95 whitespace-nowrap">
+              disabled={loading}
+              className="px-8 py-4 rounded-xl bg-brand-dark font-display font-bold text-brand-white text-base transition-all hover:scale-105 hover:shadow-2xl active:scale-95 whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100">
 
-                {t("hero.cta")} 🚀
+                {loading ? (
+                  <svg className="animate-spin h-5 w-5 mx-auto text-brand-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                ) : (
+                  <>{t("hero.cta")} 🚀</>
+                )}
               </button>
             </> :
 
