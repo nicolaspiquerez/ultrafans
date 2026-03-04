@@ -191,7 +191,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-6 font-body text-sm text-foreground/50"
         >
-          Are you a club? <a href="mailto:partner@ultrafans.co" className="text-foreground/70 underline hover:text-foreground transition-colors">partner@ultrafans.co</a>
+          {t("hero.clubQuestion")} <a href="mailto:partner@ultrafans.co" className="text-foreground/70 underline hover:text-foreground transition-colors">partner@ultrafans.co</a>
         </motion.p>
       </div>
     </section>);
