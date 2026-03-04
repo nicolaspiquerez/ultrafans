@@ -2,6 +2,7 @@ import { useState, FormEvent } from "react";
 import { useInView } from "@/hooks/useInView";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import confetti from "canvas-confetti";
 import { addWaitlistEntry } from "@/lib/firebase";
 
 export default function FooterSection() {
@@ -29,6 +30,28 @@ export default function FooterSection() {
       await addWaitlistEntry(email.trim(), type);
       setSubmitted(true);
       setError("");
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.7 },
+        colors: ["#FFD700", "#1a1a2e", "#FFFFFF", "#FF6B4A", "#4B0082"],
+      });
+      setTimeout(() => {
+        confetti({
+          particleCount: 80,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0, y: 0.75 },
+          colors: ["#FFD700", "#1a1a2e", "#FFFFFF"],
+        });
+        confetti({
+          particleCount: 80,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1, y: 0.75 },
+          colors: ["#FFD700", "#1a1a2e", "#FFFFFF"],
+        });
+      }, 300);
     } catch (err) {
       console.error("Waitlist error:", err);
       setError(t("footer.errorGeneric"));
