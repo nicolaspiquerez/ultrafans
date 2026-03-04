@@ -1,9 +1,11 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { blogPosts } from "@/data/blogPosts";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
+  const { t, i18n } = useTranslation();
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) return <Navigate to="/blog" replace />;
@@ -20,7 +22,7 @@ export default function BlogPost() {
             UltraFans
           </Link>
           <Link to="/blog" className="font-display text-sm font-bold text-brand-white/60 hover:text-brand-white transition-colors uppercase tracking-widest">
-            Blog
+            {t("blog.heading")}
           </Link>
         </div>
       </header>
@@ -37,7 +39,7 @@ export default function BlogPost() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="font-body text-xs text-brand-dark/40 uppercase tracking-wider">
-                {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                {new Date(post.date).toLocaleDateString(i18n.language, { month: "long", day: "numeric", year: "numeric" })}
               </span>
               <span className="text-brand-dark/20">·</span>
               <span className="font-body text-xs text-brand-dark/40">{post.readTime}</span>
@@ -89,7 +91,7 @@ export default function BlogPost() {
                 <span className="font-display text-base font-bold text-brand-indigo">{post.author[0]}</span>
               </div>
               <div>
-                <p className="font-display text-sm font-bold text-brand-dark mb-1">About {post.author}</p>
+                <p className="font-display text-sm font-bold text-brand-dark mb-1">{t("blog.about")} {post.author}</p>
                 <p className="font-body text-sm text-brand-dark/60 leading-relaxed">{post.authorBio}</p>
               </div>
             </div>
@@ -101,10 +103,10 @@ export default function BlogPost() {
       <footer className="py-8 px-6 border-t border-brand-dark/5">
         <div className="max-w-3xl mx-auto flex justify-between items-center">
           <Link to="/blog" className="font-display text-sm font-bold text-brand-dark/40 hover:text-brand-dark transition-colors">
-            &larr; All posts
+            {t("blog.allPosts")}
           </Link>
           <Link to="/" className="font-display text-sm font-bold text-brand-dark/40 hover:text-brand-dark transition-colors">
-            UltraFans Home
+            {t("blog.home")}
           </Link>
         </div>
       </footer>

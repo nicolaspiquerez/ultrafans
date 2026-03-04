@@ -69,7 +69,7 @@ export default function PartnerSection() {
           className="text-center"
         >
           <p className="font-body text-brand-white/50 text-base sm:text-lg mb-4">
-            Get in touch with us
+            {t("partner.getInTouch")}
           </p>
           <a
             href="mailto:partner@ultrafans.com"

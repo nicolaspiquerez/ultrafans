@@ -69,6 +69,86 @@
 
 ---
 
+## Session 2 — March 4, 2026
+
+### Blog System, Waitlist Counter, Brevo Integration, i18n, and Partner Contact
+
+**Duration:** ~2 hours
+
+#### Changes Made
+
+1. **Implemented persistent global waitlist counter**
+   - Created `src/hooks/useWaitlistCounter.ts` — deterministic timestamp-based counter
+   - Starts at 2,500 at epoch `2026-03-04T12:00:00Z`, grows ~500/day
+   - Uses splitmix32 pseudo-RNG so all visitors see the same number at the same time
+   - Full days computed in bulk (O(1)), only current partial day iterates slots
+   - Recomputes every 30–60s in-browser for visible tick-up effect
+   - Updated `SocialProof.tsx` to use the new hook (replaced simple `useState` counter)
+
+2. **Built blog system from scratch**
+   - `src/data/blogPosts.ts` — Data store with `BlogPost` interface and 3 posts
+   - `src/pages/Blog.tsx` — Listing page at `/blog` with post cards, author avatars, dates
+   - `src/pages/BlogPost.tsx` — Individual post page at `/blog/:slug` with heading/paragraph rendering and author bio
+   - Routes added to `src/App.tsx`: `/blog` and `/blog/:slug`
+   - Footer blog link updated from `/blog.html` → `/blog` (React Router)
+
+3. **Added 3 blog posts**
+   - *"Clubs Are Sitting on a Fan Data Goldmine and Doing Nothing With It"* — Nicolas, Feb 26
+   - *"The Next Wave of Sports Revenue Won't Come From Broadcasters"* — Nicolas, Mar 1
+   - *"The Financial Case for Treating Fans Like Investors"* — Ben, Mar 4
+
+4. **Fixed deployed site 404 on SPA routes**
+   - Created `public/_redirects` with `/* /index.html 200`
+   - Fixes Netlify/Lovable returning 404 when navigating directly to `/blog` or `/blog/:slug`
+
+5. **Added "Get in touch" CTA to PartnerSection**
+   - Added `"Get in touch with us"` label above a `mailto:partner@ultrafans.com` button
+   - Styled as yellow brand button matching site design
+
+6. **Replaced footer waitlist form with Brevo (Sendinblue) embed**
+   - Removed Firebase-backed custom form from `FooterSection.tsx`
+   - Integrated Brevo hosted form with Fan/Club radio buttons and email input
+   - Dynamically injects Brevo's `main.js` script on mount, cleans up on unmount
+   - Added loading spinner and `disabled` state on submit button
+   - Added `confetti` celebration on successful submission
+
+7. **Made all pages fully translatable (EN/FR)**
+   - Added missing keys to `src/locales/en.json` and `src/locales/fr.json`:
+     - `partner.getInTouch`
+     - `blog.heading`, `blog.subtitle`, `blog.backToHome`, `blog.allPosts`, `blog.home`, `blog.about`
+   - Updated `PartnerSection.tsx`, `Blog.tsx`, `BlogPost.tsx` to use `t()` for all strings
+   - Date formatting now uses `i18n.language` locale instead of hardcoded `"en-US"`
+
+#### Files Created
+- `src/hooks/useWaitlistCounter.ts`
+- `src/data/blogPosts.ts`
+- `src/pages/Blog.tsx`
+- `src/pages/BlogPost.tsx`
+- `public/_redirects`
+
+#### Files Modified
+- `src/App.tsx` — Added Blog and BlogPost routes
+- `src/components/landing/SocialProof.tsx` — Replaced fake counter with `useWaitlistCounter`
+- `src/components/landing/FooterSection.tsx` — Brevo form, loading state, confetti
+- `src/components/landing/PartnerSection.tsx` — Added "Get in touch" CTA, i18n
+- `src/locales/en.json` — Added `partner.getInTouch` and `blog.*` keys
+- `src/locales/fr.json` — Added `partner.getInTouch` and `blog.*` keys (French)
+- `src/pages/Blog.tsx` — Full i18n, date locale from `i18n.language`
+- `src/pages/BlogPost.tsx` — Full i18n, date locale from `i18n.language`
+
+#### Decisions
+- Blog post content is stored in a static TypeScript data file (`blogPosts.ts`). No CMS needed at this stage — just add objects to the array.
+- Waitlist counter is fully deterministic (no server, no database). Reset by changing the `EPOCH` constant in `useWaitlistCounter.ts`.
+- Switched footer form from Firebase to **Brevo** for email list management. Firebase `addWaitlistEntry` is still used in the Hero form.
+- Blog posts are written in English only for now. Internationalizing blog content (separate EN/FR post arrays) is a future consideration.
+- Deployment is on **Netlify** (via Lovable). The `_redirects` file is required for SPA client-side routing to work on direct URL access.
+
+#### Open Issues
+- Blog post content (titles, excerpts, author bios) is hardcoded in English. French translations of blog content not yet implemented.
+- `careers.html` and `about.html` footer links still point to static HTML files that don't exist in the React app.
+
+---
+
 ## Template for Future Sessions
 
 ```

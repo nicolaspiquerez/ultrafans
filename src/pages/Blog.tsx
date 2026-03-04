@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { blogPosts } from "@/data/blogPosts";
 
 export default function Blog() {
+  const { t, i18n } = useTranslation();
   return (
     <main className="min-h-screen bg-brand-white">
       {/* Header */}
@@ -11,7 +13,7 @@ export default function Blog() {
           <Link to="/" className="font-display text-xl font-bold text-brand-yellow hover:opacity-80 transition-opacity">
             UltraFans
           </Link>
-          <span className="font-display text-sm font-bold text-brand-white/60 uppercase tracking-widest">Blog</span>
+          <span className="font-display text-sm font-bold text-brand-white/60 uppercase tracking-widest">{t("blog.heading")}</span>
         </div>
       </header>
 
@@ -24,7 +26,7 @@ export default function Blog() {
             transition={{ duration: 0.6 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark mb-4"
           >
-            Blog
+            {t("blog.heading")}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +34,7 @@ export default function Blog() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-body text-brand-dark/60 text-lg max-w-xl"
           >
-            Thoughts on fan engagement, sports tech, and building the future of fandom.
+            {t("blog.subtitle")}
           </motion.p>
         </div>
       </section>
@@ -53,7 +55,7 @@ export default function Blog() {
               >
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="font-body text-xs text-brand-dark/40 uppercase tracking-wider">
-                    {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                    {new Date(post.date).toLocaleDateString(i18n.language, { month: "long", day: "numeric", year: "numeric" })}
                   </span>
                   <span className="text-brand-dark/20">·</span>
                   <span className="font-body text-xs text-brand-dark/40">{post.readTime}</span>
@@ -83,7 +85,7 @@ export default function Blog() {
       <footer className="py-8 px-6 border-t border-brand-dark/5">
         <div className="max-w-4xl mx-auto text-center">
           <Link to="/" className="font-display text-sm font-bold text-brand-dark/40 hover:text-brand-dark transition-colors">
-            &larr; Back to UltraFans
+            {t("blog.backToHome")}
           </Link>
         </div>
       </footer>

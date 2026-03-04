@@ -105,7 +105,8 @@
     "prop3Title": "Run real experiences, not just content",
     "prop3Desc": "Create auction experiences directly from your admin panel \u2014 add a date, location, and number of seats.",
     "trustedBy": "Trusted by clubs",
-    "partnerCta": "Partner With Us \u2192"
+    "partnerCta": "Partner With Us \u2192",
+    "getInTouch": "Get in touch with us"
   },
   "fold": {
     "title": "Are you a club?",
@@ -133,6 +134,14 @@
     "discord": "Discord",
     "instagram": "Instagram",
     "copyright": "\u00a9 2026 Ultrafans. All rights reserved."
+  },
+  "blog": {
+    "heading": "Blog",
+    "subtitle": "Thoughts on fan engagement, sports tech, and building the future of fandom.",
+    "backToHome": "← Back to UltraFans",
+    "allPosts": "← All posts",
+    "home": "UltraFans Home",
+    "about": "About"
   },
   "notFound": {
     "code": "404",
