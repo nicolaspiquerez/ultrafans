@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     author: "Nicolas",
     authorRole: "Co-Founder at UltraFans",
     authorBio: "Nicolas is Co-Founder of UltraFans, Founders in Residence at Station F, Paris. He previously worked at ANJ (French National Gambling Authority) on international sports betting regulation and won the PSG Stadium Hackathon.",
-    date: "2026-03-04",
+    date: "2026-02-26",
     readTime: "6 min read",
     excerpt: "The average club knows more about its shirt sponsor's quarterly targets than it does about the 40,000 people who show up every other Saturday.",
     content: `Here's a number that should bother every football club executive: the average club knows more about its shirt sponsor's quarterly targets than it does about the 40,000 people who show up every other Saturday and scream themselves hoarse for 90 minutes.
@@ -62,7 +62,7 @@ The data is already there. Someone just needs to pick it up.`,
     author: "Nicolas",
     authorRole: "Co-Founder at UltraFans",
     authorBio: "Nicolas is Co-Founder of UltraFans, Founders in Residence at Station F, Paris. He previously worked at ANJ (French National Gambling Authority) on international sports betting regulation and won the PSG Stadium Hackathon.",
-    date: "2026-03-04",
+    date: "2026-03-01",
     readTime: "7 min read",
     excerpt: "The growth curve is flattening. The next wave of revenue in football won't come from someone watching on a screen — it will come from the fan in Row 12 who's been there since 2014.",
     content: `For the last 30 years, the story of football finance has been a broadcast story. TV deals got bigger. Rights fees climbed. Clubs built their budgets around the next cycle of negotiations with Sky, DAZN, beIN, or whoever was willing to pay the most.

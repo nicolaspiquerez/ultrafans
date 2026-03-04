@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import confetti from "canvas-confetti";
 import { addWaitlistEntry } from "@/lib/firebase";
 import athleteSoccer from "@/assets/athlete-soccer.jpg";
 import athleteBasketball from "@/assets/athlete-basketball.jpg";
@@ -28,6 +29,28 @@ export default function Hero() {
       try {
         await addWaitlistEntry(email.trim(), "fan");
         setSubmitted(true);
+        confetti({
+          particleCount: 150,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ["#FFD700", "#1a1a2e", "#FFFFFF", "#FF6B4A", "#4B0082"],
+        });
+        setTimeout(() => {
+          confetti({
+            particleCount: 80,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 0.65 },
+            colors: ["#FFD700", "#1a1a2e", "#FFFFFF"],
+          });
+          confetti({
+            particleCount: 80,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 0.65 },
+            colors: ["#FFD700", "#1a1a2e", "#FFFFFF"],
+          });
+        }, 300);
       } catch (err) {
         console.error("Waitlist error:", err);
       }
@@ -149,6 +172,15 @@ export default function Hero() {
             </motion.div>
           }
         </motion.form>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-6 font-body text-sm text-foreground/50"
+        >
+          Are you a club? <a href="mailto:partner@ultrafans.co" className="text-foreground/70 underline hover:text-foreground transition-colors">partner@ultrafans.co</a>
+        </motion.p>
       </div>
     </section>);
 

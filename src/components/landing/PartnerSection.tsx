@@ -62,6 +62,23 @@ export default function PartnerSection() {
           ))}
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center"
+        >
+          <p className="font-body text-brand-white/50 text-base sm:text-lg mb-4">
+            Get in touch with us
+          </p>
+          <a
+            href="mailto:partner@ultrafans.com"
+            className="inline-block px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 hover:shadow-2xl active:scale-95"
+          >
+            partner@ultrafans.com
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );
