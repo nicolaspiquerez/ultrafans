@@ -1,10 +1,12 @@
 import { useState, FormEvent } from "react";
 import { useInView } from "@/hooks/useInView";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { addWaitlistEntry } from "@/lib/firebase";
 
 export default function FooterSection() {
   const { ref, isInView } = useInView();
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [type, setType] = useState<"fan" | "club" | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +20,7 @@ export default function FooterSection() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!type) {
-      setError("Please select whether you're a club or a fan.");
+      setError(t("footer.errorSelectType"));
       return;
     }
     if (!email.trim()) return;
@@ -29,9 +31,14 @@ export default function FooterSection() {
       setError("");
     } catch (err) {
       console.error("Waitlist error:", err);
-      setError("Something went wrong. Please try again.");
+      setError(t("footer.errorGeneric"));
     }
   };
+
+  const footerLinks = [
+    { label: t("footer.careers"), href: "/careers.html" },
+    { label: t("footer.blog"), href: "/blog" },
+  ];
 
   return (
     <footer id="footer" ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 dark-gradient dark-section">
@@ -42,10 +49,10 @@ export default function FooterSection() {
           transition={{ duration: 0.6 }}>
 
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-brand-white mb-4">
-            Join the waitlist
+            {t("footer.title")}
           </h2>
           <p className="font-body text-brand-white/50 mb-8">
-            Get early access before the whistle blows.
+            {t("footer.subtitle")}
           </p>
 
           {!submitted ? (
@@ -60,7 +67,7 @@ export default function FooterSection() {
                       : "bg-brand-white/10 text-brand-white border border-brand-white/20 hover:border-brand-yellow/40"
                   }`}
                 >
-                  I'm a Club
+                  {t("footer.imClub")}
                 </button>
                 <button
                   onClick={() => handleTypeSelect("fan")}
@@ -70,7 +77,7 @@ export default function FooterSection() {
                       : "bg-brand-white/10 text-brand-white border border-brand-white/20 hover:border-brand-yellow/40"
                   }`}
                 >
-                  I'm a Fan
+                  {t("footer.imFan")}
                 </button>
               </div>
 
@@ -83,7 +90,7 @@ export default function FooterSection() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
+                  placeholder={t("footer.emailPlaceholder")}
                   required
                   className="flex-1 px-5 py-4 rounded-xl bg-brand-white/10 border-2 border-brand-white/20 text-brand-white placeholder:text-brand-white/30 font-body text-base focus:outline-none focus:border-brand-yellow/50 transition-colors"
                 />
@@ -91,7 +98,7 @@ export default function FooterSection() {
                   type="submit"
                   className="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
                 >
-                  Get Early Access
+                  {t("footer.cta")}
                 </button>
               </form>
             </>
@@ -103,12 +110,12 @@ export default function FooterSection() {
             >
               <span className="text-3xl block mb-2">🥐</span>
               <p className="font-display font-bold text-lg text-brand-white">
-                {type === "fan" ? "You're on the roster!" : "We'll be in touch!"}
+                {type === "fan" ? t("footer.successFanTitle") : t("footer.successClubTitle")}
               </p>
               <p className="text-sm text-brand-white/50 font-body">
                 {type === "fan"
-                  ? "We'll reach out before kickoff."
-                  : "Our partnerships team will contact you within 48 hours."}
+                  ? t("footer.successFanSubtitle")
+                  : t("footer.successClubSubtitle")}
               </p>
             </motion.div>
           )}
@@ -117,19 +124,25 @@ export default function FooterSection() {
 
       {/* Bottom bar */}
       <div className="max-w-5xl mx-auto mt-20 pt-8 border-t border-brand-white/10 text-center">
-        <p className="font-display text-2xl font-bold text-brand-yellow mb-4">Ultrafans</p>
+        <p className="font-display text-2xl font-bold text-brand-yellow mb-4">{t("footer.brand")}</p>
         <div className="flex justify-center gap-4 sm:gap-6 flex-wrap mb-6">
-          {["About", "Careers", "Blog", "X (Twitter)", "Discord", "Instagram"].map((link) => (
+          <a
+            href="/about.html"
+            className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
+          >
+            {t("footer.aboutUs")}
+          </a>
+          {footerLinks.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
               className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
-        <p className="font-body text-xs text-brand-white/20 mb-2">© 2026 Ultrafans. All rights reserved.</p>
+        <p className="font-body text-xs text-brand-white/20 mb-2">{t("footer.copyright")}</p>
       </div>
     </footer>
   );

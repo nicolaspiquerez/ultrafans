@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "badge": "ACC\u00c8S ANTICIP\u00c9",
+    "title": "Ultrafans",
+    "subtitle": "L\u00e0 o\u00f9 les fans de sport vivent",
+    "subtitleLine2": "des exp\u00e9riences uniques avec leurs \u00e9quipes.",
+    "emailPlaceholder": "votre@email.com",
+    "cta": "Obtenir l'acc\u00e8s anticip\u00e9",
+    "successTitle": "Vous \u00eates sur la liste !",
+    "successSubtitle": "On vous contacte avant le coup d'envoi.",
+    "profiles": {
+      "carlosFans": "12.4K fans de foot",
+      "jayFans": "8.9K fans NBA",
+      "marcusFans": "15.1K fans NFL",
+      "viktorFans": "6.7K fans de rugby",
+      "fanClubName": "Fan Club",
+      "fanClubFans": "23.4K fans de hockey"
+    }
+  },
+  "howItWorks": {
+    "title": "Comment \u00e7a marche",
+    "subtitle": "Trois \u00e9tapes. Z\u00e9ro complexit\u00e9. Maximum de passion.",
+    "step1Title": "Soutenez votre \u00e9quipe",
+    "step1Desc": "Achetez les cr\u00e9dits fan de votre club et devenez un supporter v\u00e9rifi\u00e9. Chaque achat va directement \u00e0 l'\u00e9quipe que vous aimez.",
+    "step2Title": "Stakez et gagnez",
+    "step2Desc": "Stakez vos cr\u00e9dits fan pour commencer \u00e0 gagner des points de fid\u00e9lit\u00e9 chaque jour. Plus vous gardez, plus vous accumulez.",
+    "step3Title": "Ench\u00e9rissez sur des moments inoubliables",
+    "step3Desc": "D\u00e9pensez vos points dans des ench\u00e8res en direct pour des r\u00e9compenses r\u00e9elles : billets VIP, maillots d\u00e9dicac\u00e9s, voyages avec l'\u00e9quipe et rencontres avec les joueurs."
+  },
+  "features": {
+    "title": "Con\u00e7u pour les fans",
+    "fan": {
+      "tag": "Cr\u00e9dits Fan",
+      "title": "Votre \u00e9quipe. Votre mise.",
+      "desc": "Achetez les cr\u00e9dits fan de votre club par carte en quelques secondes \u2014 sans complexit\u00e9. Plus de cr\u00e9dits = plus de points quotidiens. Votre solde est votre rang dans la hi\u00e9rarchie des fans.",
+      "mockTeam": "FC United",
+      "mockLabel": "Cr\u00e9dit Fan",
+      "mockBalance": "Votre Solde",
+      "mockDailyPoints": "points quotidiens"
+    },
+    "staking": {
+      "tag": "Points & Staking",
+      "title": "Gardez pour gagner. Gagnez pour r\u00e9colter.",
+      "desc": "Stakez vos cr\u00e9dits fan pour g\u00e9n\u00e9rer des points de fid\u00e9lit\u00e9 automatiquement. Les points n'expirent jamais \u2014 ils s'accumulent en attendant la prochaine ench\u00e8re.",
+      "mockTotalPoints": "Points Totaux",
+      "mockChartLabel": "Points gagn\u00e9s (12 semaines)"
+    },
+    "auction": {
+      "tag": "Ench\u00e8res R\u00e9compenses",
+      "title": "Un gagnant. Des r\u00e9compenses r\u00e9elles.",
+      "desc": "Ench\u00e9rissez vos points dans des ench\u00e8res en direct pour des exp\u00e9riences que l'argent ne peut normalement pas acheter : billets VIP, maillots d\u00e9dicac\u00e9s, voyages avec l'\u00e9quipe, ou une rencontre priv\u00e9e.",
+      "mockLive": "EN DIRECT",
+      "mockItem": "Maillot de Match D\u00e9dicac\u00e9",
+      "mockTopBid": "Meilleure offre",
+      "mockTopBidValue": "4 200 pts",
+      "mockEndsIn": "Se termine dans",
+      "mockPlaceBid": "Ench\u00e9rir"
+    }
+  },
+  "sports": {
+    "title": "Vos \u00e9quipes sportives pr\u00e9f\u00e9r\u00e9es",
+    "subtitle": "Vivez des exp\u00e9riences r\u00e9elles avec plus de sports et plus de r\u00e9compenses.",
+    "football": "Football",
+    "footballTagline": "Des matchs locaux aux finales de coupe.",
+    "basketball": "Basketball",
+    "basketballTagline": "Au bord du terrain, sans le prix.",
+    "americanFootball": "Football Am\u00e9ricain",
+    "americanFootballTagline": "La culture tailgate, digitalis\u00e9e.",
+    "rugby": "Rugby",
+    "rugbyTagline": "M\u00eal\u00e9e form\u00e9e, pr\u00e9sence assur\u00e9e.",
+    "hockey": "Hockey",
+    "hockeyTagline": "De la patinoire au vestiaire.",
+    "baseball": "Baseball",
+    "baseballTagline": "Chaque lancer, chaque fan."
+  },
+  "socialProof": {
+    "waitlistLabel": "Fans sur la liste d'attente",
+    "andCounting": "et \u00e7a continue...",
+    "testimonial1Quote": "J'ai stak\u00e9 des cr\u00e9dits sur mon club et gagn\u00e9 un maillot d\u00e9dicac\u00e9 lors d'une ench\u00e8re en direct. Le mardi le plus fou de ma vie.",
+    "testimonial1Name": "Marco, Italie",
+    "testimonial1Sport": "Fan de football",
+    "testimonial2Quote": "Des places courtside gr\u00e2ce \u00e0 des points de fid\u00e9lit\u00e9 ? Pas un seul dollar d\u00e9pens\u00e9 au-del\u00e0 de mes cr\u00e9dits fan. C'est irr\u00e9el.",
+    "testimonial2Name": "Jasmine, USA",
+    "testimonial2Sport": "Fan de basketball",
+    "testimonial3Quote": "Je soutiens mon \u00e9quipe depuis des ann\u00e9es. Enfin une plateforme qui me permet de le prouver et d'\u00eatre r\u00e9compens\u00e9.",
+    "testimonial3Name": "Alex, France",
+    "testimonial3Sport": "Fan de rugby",
+    "marquee": {
+      "football": "Football",
+      "basketball": "Basketball",
+      "rugby": "Rugby",
+      "hockey": "Hockey",
+      "baseball": "Baseball",
+      "americanFootball": "Football Am\u00e9ricain"
+    }
+  },
+  "partner": {
+    "titleLine1": "Engagement fan",
+    "titleLine2": "pour les \u00e9quipes sportives.",
+    "subtitle": "Tout ce dont vous avez besoin pour connecter avec vos ultrafans et cr\u00e9er des exp\u00e9riences inoubliables.",
+    "prop1Title": "Votre propre cr\u00e9dit fan, en ligne en un jour",
+    "prop1Desc": "\u00c9mettez le cr\u00e9dit fan de votre \u00e9quipe en un clic. D\u00e9finissez l'offre, g\u00e9rez la distribution \u2014 nous g\u00e9rons toute l'infrastructure. Aucune \u00e9quipe technique requise.",
+    "prop2Title": "Visibilit\u00e9 compl\u00e8te sur vos fans",
+    "prop2Desc": "Connectez-vous \u00e0 tous vos ultrafans dans un seul tableau de bord. Sachez qui sont vos supporters les plus engag\u00e9s, pas seulement vos plus gros comptes sur les r\u00e9seaux sociaux.",
+    "prop3Title": "Cr\u00e9ez des exp\u00e9riences r\u00e9elles, pas du contenu",
+    "prop3Desc": "Cr\u00e9ez des exp\u00e9riences d'ench\u00e8res directement depuis votre panneau d'administration \u2014 ajoutez une date, un lieu et un nombre de places.",
+    "trustedBy": "Reconnu par les clubs",
+    "partnerCta": "Devenez Partenaire \u2192"
+  },
+  "fold": {
+    "title": "Vous \u00eates un club ?",
+    "subtitle": "Ultrafans est fait pour vous. Contactez-nous \u00e0 team@ultrafans.co"
+  },
+  "footer": {
+    "title": "Rejoignez la liste d'attente",
+    "subtitle": "Obtenez l'acc\u00e8s anticip\u00e9 avant le coup de sifflet.",
+    "imClub": "Je suis un Club",
+    "imFan": "Je suis un Fan",
+    "errorSelectType": "Veuillez indiquer si vous \u00eates un club ou un fan.",
+    "errorGeneric": "Une erreur est survenue. Veuillez r\u00e9essayer.",
+    "emailPlaceholder": "votre@email.com",
+    "cta": "Obtenir l'acc\u00e8s anticip\u00e9",
+    "successFanTitle": "Vous \u00eates sur la liste !",
+    "successClubTitle": "Nous vous contacterons !",
+    "successFanSubtitle": "On vous contacte avant le coup d'envoi.",
+    "successClubSubtitle": "Notre \u00e9quipe partenariats vous contactera sous 48 heures.",
+    "brand": "Ultrafans",
+    "aboutUs": "\u00c0 propos de nous",
+    "about": "\u00c0 propos",
+    "careers": "Carri\u00e8res",
+    "blog": "Blog",
+    "twitter": "X (Twitter)",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "copyright": "\u00a9 2026 Ultrafans. Tous droits r\u00e9serv\u00e9s."
+  },
+  "notFound": {
+    "code": "404",
+    "message": "Oups ! Page introuvable",
+    "returnHome": "Retour \u00e0 l'accueil"
+  }
+}

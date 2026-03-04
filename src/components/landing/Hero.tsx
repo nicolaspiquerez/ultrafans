@@ -1,23 +1,26 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { addWaitlistEntry } from "@/lib/firebase";
 import athleteSoccer from "@/assets/athlete-soccer.jpg";
 import athleteBasketball from "@/assets/athlete-basketball.jpg";
 import athleteNfl from "@/assets/athlete-nfl.jpg";
 import athleteUfc from "@/assets/athlete-ufc.jpg";
 import fansCheering from "@/assets/fans-cheering.jpg";
-
-const floatingProfiles = [
-{ img: athleteSoccer, name: "Carlos M.", fans: "12.4K football fans", className: "top-[15%] left-[8%] float-1" },
-{ img: athleteBasketball, name: "Jay W.", fans: "8.9K NBA fans", className: "top-[10%] right-[10%] float-2" },
-{ img: athleteNfl, name: "Marcus T.", fans: "15.1K NFL fans", className: "bottom-[25%] left-[5%] float-3 hidden md:block" },
-{ img: athleteUfc, name: "Viktor K.", fans: "6.7K Rugby fans", className: "bottom-[20%] right-[8%] float-4" },
-{ img: fansCheering, name: "Fan Club", fans: "23.4K Hockey fans", className: "top-[45%] left-[15%] float-5 hidden lg:block" }];
-
+import LanguageToggle from "./LanguageToggle";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  const floatingProfiles = [
+    { img: athleteSoccer, name: "Carlos M.", fans: t("hero.profiles.carlosFans"), className: "top-[15%] left-[8%] float-1" },
+    { img: athleteBasketball, name: "Jay W.", fans: t("hero.profiles.jayFans"), className: "top-[10%] right-[10%] float-2" },
+    { img: athleteNfl, name: "Marcus T.", fans: t("hero.profiles.marcusFans"), className: "bottom-[25%] left-[5%] float-3 hidden md:block" },
+    { img: athleteUfc, name: "Viktor K.", fans: t("hero.profiles.viktorFans"), className: "bottom-[20%] right-[8%] float-4" },
+    { img: fansCheering, name: t("hero.profiles.fanClubName"), fans: t("hero.profiles.fanClubFans"), className: "top-[45%] left-[15%] float-5 hidden lg:block" },
+  ];
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -40,7 +43,12 @@ export default function Hero() {
         backgroundSize: "400% 400%",
         animation: "hero-gradient 8s ease infinite"
       }}>
-      
+
+      {/* Language toggle */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30">
+        <LanguageToggle />
+      </div>
+
       {/* Floating athlete profiles */}
       {floatingProfiles.map((p, i) =>
       <div
@@ -92,16 +100,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
-          
-          <span className="inline-block font-display text-sm md:text-base font-bold tracking-widest uppercase mb-6 bg-foreground/10 px-4 py-2 rounded-full">EARLY ACCESS
+
+          <span className="inline-block font-display text-sm md:text-base font-bold tracking-widest uppercase mb-6 bg-foreground/10 px-4 py-2 rounded-full">{t("hero.badge")}
 
           </span>
           <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
-            Ultrafans
+            {t("hero.title")}
           </h1>
           <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 text-foreground/80 font-body">
-            Where sports fans unlock real experiences<br />
-            with the teams they love.
+            {t("hero.subtitle")}<br />
+            {t("hero.subtitleLine2")}
           </p>
         </motion.div>
 
@@ -111,22 +119,22 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          
+
           {!submitted ?
           <>
               <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
+              placeholder={t("hero.emailPlaceholder")}
               required
               className="flex-1 px-5 py-4 rounded-xl bg-foreground/10 border-2 border-foreground/20 text-foreground placeholder:text-foreground/40 font-body text-base focus:outline-none focus:border-foreground/40 transition-colors" />
-            
+
               <button
               type="submit"
               className="px-8 py-4 rounded-xl bg-brand-dark font-display font-bold text-brand-white text-base transition-all hover:scale-105 hover:shadow-2xl active:scale-95 whitespace-nowrap">
-              
-                Get Early Access 🚀
+
+                {t("hero.cta")} 🚀
               </button>
             </> :
 
@@ -134,10 +142,10 @@ export default function Hero() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             className="w-full px-6 py-5 rounded-xl bg-foreground/10 border-2 border-foreground/20 text-center">
-            
+
               <span className="text-3xl block mb-2">🥐</span>
-              <p className="font-display font-bold text-lg">You're on the roster!</p>
-              <p className="text-sm text-foreground/70 font-body">We'll be in touch before kickoff.</p>
+              <p className="font-display font-bold text-lg">{t("hero.successTitle")}</p>
+              <p className="text-sm text-foreground/70 font-body">{t("hero.successSubtitle")}</p>
             </motion.div>
           }
         </motion.form>
