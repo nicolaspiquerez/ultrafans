@@ -68,15 +68,14 @@ export default function PartnerSection() {
           className="text-center"
         >
           <p className="font-body text-sm text-brand-white/30 mb-6 uppercase tracking-widest">
-            Trusted by clubs
+            You are a sport club ?
           </p>
 
-
           <a
-            href="#footer"
+            href="mailto:partner@ultrafans.co"
             className="inline-block mt-12 px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 hover:glow-yellow"
           >
-            Partner With Us →
+            Or email us at partner@ultrafans.co →
           </a>
         </motion.div>
       </div>
