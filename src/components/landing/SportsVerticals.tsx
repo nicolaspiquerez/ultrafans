@@ -8,7 +8,7 @@ import athleteHockey from "@/assets/athlete-hockey.jpg";
 import athleteBaseball from "@/assets/athlete-baseball.jpg";
 
 const sports = [
-  { img: athleteSoccer, sport: "Football", tagline: "From the Premier League to Liga MX.", emoji: "⚽" },
+  { img: athleteSoccer, sport: "Football", tagline: "From local matches to cup finals.", emoji: "⚽" },
   { img: athleteBasketball, sport: "Basketball", tagline: "Courtside without the price tag.", emoji: "🏀" },
   { img: athleteNfl, sport: "American Football", tagline: "Tailgate culture, digitized.", emoji: "🏈" },
   { img: athleteRugby, sport: "Rugby", tagline: "Scrum down and show up.", emoji: "🏉" },
@@ -28,7 +28,7 @@ export default function SportsVerticals() {
           transition={{ duration: 0.6 }}
           className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-4 text-brand-dark"
         >
-          Every sport. One platform.
+          Your favorite sport teams
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function SportsVerticals() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-center text-brand-dark/60 font-body text-base sm:text-lg mb-10 sm:mb-16 max-w-xl mx-auto"
         >
-          Four verticals at launch. More to come.
+          Earn real experiences with more sports and more rewards.
         </motion.p>
 
         {/* Horizontal scroll on mobile, grid on desktop */}

@@ -20,7 +20,7 @@ const features = [
           <p className="font-display text-3xl font-bold text-brand-yellow">2,450</p>
         </div>
         <div className="bg-brand-white/10 rounded-lg px-3 py-2 text-xs">
-          <span className="text-brand-yellow">+12.5</span> points/day
+          <span className="text-brand-yellow">2,450</span> daily points
         </div>
       </div>
     ),
@@ -34,7 +34,7 @@ const features = [
         <p className="text-xs text-brand-white/50">Total Points</p>
         <p className="font-display text-3xl font-bold text-brand-yellow">18,720</p>
         <div className="flex gap-1 h-20 items-end">
-          {[30, 45, 38, 55, 62, 58, 72, 80, 75, 90, 95, 100].map((h, i) => (
+          {[30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85].map((h, i) => (
             <div
               key={i}
               className="flex-1 rounded-t-sm bg-brand-yellow/70"
@@ -89,7 +89,7 @@ export default function FeatureShowcase() {
           transition={{ duration: 0.6 }}
           className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-10 sm:mb-16 text-brand-dark"
         >
-          Built for ultra fans
+          Built for the fans
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">

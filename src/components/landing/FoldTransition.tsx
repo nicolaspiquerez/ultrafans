@@ -18,7 +18,7 @@ export default function FoldTransition() {
         <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white mb-4">Are you a club?
         </p>
         <p className="font-body text-brand-white/60 text-lg">
-          Ultrafans is infrastructure. Plug it into your roster.
+          Ultrafans is made for you. Contact-us at team@ultrafans.co
         </p>
       </motion.div>
     </section>);
