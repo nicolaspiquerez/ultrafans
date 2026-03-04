@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { useInView } from "@/hooks/useInView";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -62,10 +63,7 @@ export default function FooterSection() {
     }
   };
 
-  const footerLinks = [
-    { label: t("footer.careers"), href: "/careers.html" },
-    { label: t("footer.blog"), href: "/blog" },
-  ];
+  const APP_VERSION = "1.0.0";
 
   return (
     <footer id="footer" ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 dark-gradient dark-section">
@@ -167,17 +165,21 @@ export default function FooterSection() {
           >
             {t("footer.aboutUs")}
           </a>
-          {footerLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          <a
+            href="/careers.html"
+            className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
+          >
+            {t("footer.careers")}
+          </a>
+          <Link
+            to="/blog"
+            className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
+          >
+            {t("footer.blog")}
+          </Link>
         </div>
         <p className="font-body text-xs text-brand-white/20 mb-2">{t("footer.copyright")}</p>
+        <p className="font-body text-xs text-brand-white/10 mt-1">v{APP_VERSION}</p>
       </div>
     </footer>
   );

@@ -20,7 +20,10 @@ export default function FoldTransition() {
         <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white mb-4">{t("fold.title")}
         </p>
         <p className="font-body text-brand-white/60 text-lg">
-          {t("fold.subtitle")}
+          {t("fold.subtitleText")}{" "}
+          <a href="mailto:team@ultrafans.co" className="text-brand-yellow hover:underline">
+            team@ultrafans.co
+          </a>
         </p>
       </motion.div>
     </section>);
