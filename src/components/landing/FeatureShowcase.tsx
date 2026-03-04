@@ -81,25 +81,25 @@ export default function FeatureShowcase() {
   const { ref, isInView } = useInView();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 brand-gradient">
+    <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 brand-gradient">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-display text-4xl md:text-5xl font-bold text-center mb-16 text-brand-dark"
+          className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-10 sm:mb-16 text-brand-dark"
         >
           Built for the fans
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {features.map((f, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.2 }}
-              className="card-tilt bg-brand-white rounded-2xl p-6 pb-8 border border-brand-dark/5"
+              className="card-tilt bg-brand-white rounded-2xl p-4 pb-6 sm:p-6 sm:pb-8 border border-brand-dark/5"
             >
               <span className="inline-block font-display text-xs font-bold tracking-wider uppercase bg-brand-yellow px-3 py-1 rounded-full text-brand-dark mb-4">
                 {f.tag}
