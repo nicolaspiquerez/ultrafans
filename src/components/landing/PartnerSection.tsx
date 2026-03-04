@@ -72,10 +72,10 @@ export default function PartnerSection() {
             {t("partner.getInTouch")}
           </p>
           <a
-            href="mailto:partner@ultrafans.com"
+            href="mailto:partner@ultrafans.co"
             className="inline-block px-8 py-4 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-base transition-all hover:scale-105 hover:shadow-2xl active:scale-95"
           >
-            partner@ultrafans.com
+            partner@ultrafans.co
           </a>
         </motion.div>
 
