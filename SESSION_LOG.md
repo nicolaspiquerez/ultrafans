@@ -102,7 +102,7 @@
    - Fixes Netlify/Lovable returning 404 when navigating directly to `/blog` or `/blog/:slug`
 
 5. **Added "Get in touch" CTA to PartnerSection**
-   - Added `"Get in touch with us"` label above a `mailto:partner@ultrafans.com` button
+   - Added `"Get in touch with us"` label above a `mailto:partner@ultrafans.co` button
    - Styled as yellow brand button matching site design
 
 6. **Replaced footer waitlist form with Brevo (Sendinblue) embed**

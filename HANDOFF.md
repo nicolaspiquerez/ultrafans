@@ -29,7 +29,7 @@ The platform serves **two audiences**:
 | Blog system | Done | `/blog` listing + `/blog/:slug` individual posts. Content in `src/data/blogPosts.ts` |
 | Blog posts | Done | 3 posts by Nicolas (x2) and Ben (x1) |
 | EN/FR i18n | Done | All UI strings in `src/locales/en.json` and `fr.json`. Language toggle in Hero |
-| Partner contact CTA | Done | "Get in touch with us" + `mailto:partner@ultrafans.com` button in PartnerSection |
+| Partner contact CTA | Done | "Get in touch with us" + `mailto:partner@ultrafans.co` button in PartnerSection |
 | SPA routing fix | Done | `public/_redirects` ensures Netlify serves `index.html` for all routes |
 | Brand system | Done | Yellow/dark/indigo palette, Space Grotesk + DM Sans, custom CSS animations |
 | Responsive design | Done | Mobile-first, horizontal scroll on card grids, hidden elements on small screens |
