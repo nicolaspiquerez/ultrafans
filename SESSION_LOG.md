@@ -1,4 +1,4 @@
-# Ultrafans — Session Log
+# UltraFans — Session Log
 
 > Chronological record of development sessions and changes.
 

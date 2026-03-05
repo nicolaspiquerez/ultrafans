@@ -1,4 +1,4 @@
-# Ultrafans — Product Roadmap
+# UltraFans — Product Roadmap
 
 > Last updated: March 2026
 

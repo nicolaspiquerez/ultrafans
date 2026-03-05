@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "EARLY ACCESS",
-    "title": "Ultrafans",
+    "title": "UltraFans",
     "subtitle": "Where sports fans unlock real experiences",
     "subtitleLine2": "with the teams they love.",
     "emailPlaceholder": "your@email.com",
@@ -111,7 +111,7 @@
   },
   "fold": {
     "title": "Are you a club?",
-    "subtitleText": "Ultrafans is made for you. Contact us at"
+    "subtitleText": "UltraFans is made for you. Contact us at"
   },
   "footer": {
     "title": "Join the waitlist",
@@ -126,7 +126,7 @@
     "successClubTitle": "We'll be in touch!",
     "successFanSubtitle": "We'll reach out before kickoff.",
     "successClubSubtitle": "Our partnerships team will contact you within 48 hours.",
-    "brand": "Ultrafans",
+    "brand": "UltraFans",
     "aboutUs": "About Us",
     "about": "About",
     "careers": "Careers",
@@ -134,7 +134,7 @@
     "twitter": "X (Twitter)",
     "discord": "Discord",
     "instagram": "Instagram",
-    "copyright": "\u00a9 2026 Ultrafans. All rights reserved."
+    "copyright": "\u00a9 2026 UltraFans. All rights reserved."
   },
   "blog": {
     "heading": "Blog",

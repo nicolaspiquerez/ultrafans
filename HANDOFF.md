@@ -1,12 +1,12 @@
-# Ultrafans — Handoff Document
+# UltraFans — Handoff Document
 
 > Last updated: March 4, 2026 (Session 2)
 
 ---
 
-## What Is Ultrafans?
+## What Is UltraFans?
 
-Ultrafans is a **fan engagement platform for sports**. Fans buy fan credits tied to their favorite clubs, stake those credits to earn loyalty points over time, and then spend points in live auctions for real-world experiences (VIP tickets, signed merch, meet-and-greets, travel with the team).
+UltraFans is a **fan engagement platform for sports**. Fans buy fan credits tied to their favorite clubs, stake those credits to earn loyalty points over time, and then spend points in live auctions for real-world experiences (VIP tickets, signed merch, meet-and-greets, travel with the team).
 
 The platform serves **two audiences**:
 1. **Fans** — Buy credits, earn points, bid on experiences.

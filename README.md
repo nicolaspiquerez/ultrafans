@@ -1,8 +1,8 @@
-# Ultrafans
+# UltraFans
 
 > The platform where sports fans unlock real experiences with the teams they love.
 
-Ultrafans is a fan engagement platform that lets supporters buy fan credits for their favorite sports clubs, stake them to earn loyalty points, and bid those points in live auctions for real-world experiences — VIP match tickets, signed shirts, travel with the squad, and more.
+UltraFans is a fan engagement platform that lets supporters buy fan credits for their favorite sports clubs, stake them to earn loyalty points, and bid those points in live auctions for real-world experiences — VIP match tickets, signed shirts, travel with the squad, and more.
 
 **Status:** Pre-launch (landing page + waitlist live)
 
@@ -136,4 +136,4 @@ npm run build
 
 ## License
 
-Proprietary — All rights reserved. © 2026 Ultrafans.
+Proprietary — All rights reserved. © 2026 UltraFans.

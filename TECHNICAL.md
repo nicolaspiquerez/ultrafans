@@ -1,4 +1,4 @@
-# Ultrafans — Technical Details
+# UltraFans — Technical Details
 
 > Last updated: March 2026
 
