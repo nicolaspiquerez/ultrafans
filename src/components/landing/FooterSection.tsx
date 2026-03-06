@@ -145,11 +145,17 @@ export default function FooterSection() {
               <p className="font-display font-bold text-lg text-brand-white">
                 {type === "fan" ? t("footer.successFanTitle") : t("footer.successClubTitle")}
               </p>
-              <p className="text-sm text-brand-white/50 font-body">
+              <p className="text-sm text-brand-white/50 font-body mb-3">
                 {type === "fan"
                   ? t("footer.successFanSubtitle")
                   : t("footer.successClubSubtitle")}
               </p>
+              <Link
+                to="/app"
+                className="inline-block px-6 py-2.5 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-sm transition-all hover:scale-105 active:scale-95"
+              >
+                {t("footer.previewBeta")} →
+              </Link>
             </motion.div>
           )}
         </motion.div>

@@ -8,6 +8,7 @@
     "cta": "Get Early Access",
     "successTitle": "You're on the roster!",
     "successSubtitle": "We'll be in touch before kickoff.",
+    "previewBeta": "Preview the beta app now",
     "profiles": {
       "carlosFans": "12.4K football fans",
       "jayFans": "8.9K NBA fans",
@@ -125,6 +126,7 @@
     "successFanTitle": "You're on the roster!",
     "successClubTitle": "We'll be in touch!",
     "successFanSubtitle": "We'll reach out before kickoff.",
+    "previewBeta": "Preview the beta app now",
     "successClubSubtitle": "Our partnerships team will contact you within 48 hours.",
     "brand": "UltraFans",
     "aboutUs": "About Us",
@@ -143,6 +145,41 @@
     "allPosts": "← All posts",
     "home": "UltraFans Home",
     "about": "About"
+  },
+  "app": {
+    "pageLabel": "Beta Preview",
+    "title": "Explore clubs",
+    "subtitle": "Star your favorite clubs to be alerted when UltraFans points are available.",
+    "backToHome": "\u2190 Back to UltraFans",
+    "sports": {
+      "football": "Football",
+      "basketball": "Basketball",
+      "americanFootball": "American Football",
+      "rugby": "Rugby",
+      "hockey": "Hockey",
+      "baseball": "Baseball"
+    },
+    "countries": {
+      "uk": "United Kingdom",
+      "france": "France",
+      "spain": "Spain"
+    },
+    "starred": "You'll be notified!",
+    "unstarred": "Star to get notified",
+    "visitWebsite": "Visit website",
+    "suggestTitle": "Can't find your team?",
+    "suggestSubtitle": "Tell us which club you want to see on UltraFans.",
+    "suggestTeamName": "Team name",
+    "suggestTeamNamePlaceholder": "e.g. Aston Villa",
+    "suggestCountry": "Country (optional)",
+    "suggestCountryPlaceholder": "e.g. England",
+    "suggestSport": "Sport (optional)",
+    "suggestSportPlaceholder": "e.g. Football",
+    "suggestSubmit": "Submit suggestion",
+    "suggestSuccess": "Thanks! We've noted your suggestion.",
+    "suggestError": "Something went wrong. Please try again.",
+    "comingSoon": "Coming soon",
+    "noClubsYet": "No clubs listed for this sport yet. Suggest one below!"
   },
   "notFound": {
     "code": "404",

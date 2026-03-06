@@ -14,3 +14,19 @@ export async function addWaitlistEntry(email: string, type: "fan" | "club") {
     mode: "no-cors",
   });
 }
+
+export async function submitTeamSuggestion(
+  teamName: string,
+  country?: string,
+  sport?: string
+) {
+  const res = await fetch("/api/suggest-team", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ teamName, country, sport }),
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to submit suggestion");
+  }
+}

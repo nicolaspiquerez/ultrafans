@@ -8,6 +8,7 @@
     "cta": "Obtenir l'acc\u00e8s anticip\u00e9",
     "successTitle": "Vous \u00eates sur la liste !",
     "successSubtitle": "On vous contacte avant le coup d'envoi.",
+    "previewBeta": "D\u00e9couvrir la b\u00eata maintenant",
     "profiles": {
       "carlosFans": "12.4K fans de foot",
       "jayFans": "8.9K fans NBA",
@@ -125,6 +126,7 @@
     "successFanTitle": "Vous \u00eates sur la liste !",
     "successClubTitle": "Nous vous contacterons !",
     "successFanSubtitle": "On vous contacte avant le coup d'envoi.",
+    "previewBeta": "Découvrir la bêta maintenant",
     "successClubSubtitle": "Notre \u00e9quipe partenariats vous contactera sous 48 heures.",
     "brand": "UltraFans",
     "aboutUs": "\u00c0 propos de nous",
@@ -143,6 +145,41 @@
     "allPosts": "\u2190 Tous les articles",
     "home": "Accueil UltraFans",
     "about": "\u00c0 propos de"
+  },
+  "app": {
+    "pageLabel": "Aperçu Bêta",
+    "title": "Explorez les clubs",
+    "subtitle": "Ajoutez vos clubs favoris pour être alerté quand les points UltraFans seront disponibles.",
+    "backToHome": "\u2190 Retour à UltraFans",
+    "sports": {
+      "football": "Football",
+      "basketball": "Basketball",
+      "americanFootball": "Football Américain",
+      "rugby": "Rugby",
+      "hockey": "Hockey",
+      "baseball": "Baseball"
+    },
+    "countries": {
+      "uk": "Royaume-Uni",
+      "france": "France",
+      "spain": "Espagne"
+    },
+    "starred": "Vous serez notifié !",
+    "unstarred": "Ajouter aux favoris pour être notifié",
+    "visitWebsite": "Visiter le site",
+    "suggestTitle": "Vous ne trouvez pas votre équipe ?",
+    "suggestSubtitle": "Dites-nous quel club vous aimeriez voir sur UltraFans.",
+    "suggestTeamName": "Nom de l'équipe",
+    "suggestTeamNamePlaceholder": "ex. Aston Villa",
+    "suggestCountry": "Pays (optionnel)",
+    "suggestCountryPlaceholder": "ex. Angleterre",
+    "suggestSport": "Sport (optionnel)",
+    "suggestSportPlaceholder": "ex. Football",
+    "suggestSubmit": "Envoyer la suggestion",
+    "suggestSuccess": "Merci ! Nous avons noté votre suggestion.",
+    "suggestError": "Une erreur est survenue. Veuillez réessayer.",
+    "comingSoon": "Bientôt disponible",
+    "noClubsYet": "Aucun club listé pour ce sport. Suggérez-en un ci-dessous !"
   },
   "notFound": {
     "code": "404",

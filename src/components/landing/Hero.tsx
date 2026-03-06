@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import confetti from "canvas-confetti";
@@ -180,7 +181,13 @@ export default function Hero() {
 
               <span className="text-3xl block mb-2">🥐</span>
               <p className="font-display font-bold text-lg">{t("hero.successTitle")}</p>
-              <p className="text-sm text-foreground/70 font-body">{t("hero.successSubtitle")}</p>
+              <p className="text-sm text-foreground/70 font-body mb-3">{t("hero.successSubtitle")}</p>
+              <Link
+                to="/app"
+                className="inline-block px-6 py-2.5 rounded-xl bg-brand-dark text-brand-white font-display font-bold text-sm transition-all hover:scale-105 active:scale-95"
+              >
+                {t("hero.previewBeta")} →
+              </Link>
             </motion.div>
           }
         </motion.form>
