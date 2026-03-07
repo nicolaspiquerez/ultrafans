@@ -10,7 +10,7 @@
     "successSubtitle": "We'll be in touch before kickoff.",
     "previewBeta": "Preview the beta app now",
     "profiles": {
-      "carlosFans": "12.4K football fans",
+      "carlosFans": "12.4K Football fans",
       "jayFans": "8.9K NBA fans",
       "marcusFans": "15.1K NFL fans",
       "viktorFans": "6.7K Rugby fans",
@@ -108,14 +108,14 @@
     "prop3Desc": "Create auction experiences directly from your admin panel \u2014 add a date, location, and number of seats.",
     "trustedBy": "Trusted by clubs",
     "partnerCta": "Partner With Us \u2192",
-    "getInTouch": "Get in touch with us"
+    "getInTouch": "Are you a club ? Get in touch with us"
   },
   "fold": {
     "title": "Are you a club?",
     "subtitleText": "UltraFans is made for you. Contact us at"
   },
   "footer": {
-    "title": "Join the waitlist",
+    "title": "Join the waitlist of Ultrafans",
     "subtitle": "Get early access before the whistle blows.",
     "imClub": "I'm a Club",
     "imFan": "I'm a Fan",
@@ -133,6 +133,7 @@
     "about": "About",
     "careers": "Careers",
     "blog": "Blog",
+    "app": "App",
     "twitter": "X (Twitter)",
     "discord": "Discord",
     "instagram": "Instagram",
@@ -147,7 +148,7 @@
     "about": "About"
   },
   "app": {
-    "pageLabel": "Beta Preview",
+    "pageLabel": "Beta version",
     "title": "Explore clubs",
     "subtitle": "Star your favorite clubs to be alerted when UltraFans points are available.",
     "backToHome": "\u2190 Back to UltraFans",
@@ -160,9 +161,12 @@
       "baseball": "Baseball"
     },
     "countries": {
+      "all": "All",
       "uk": "United Kingdom",
       "france": "France",
-      "spain": "Spain"
+      "spain": "Spain",
+      "belgium": "Belgium",
+      "switzerland": "Switzerland"
     },
     "starred": "You'll be notified!",
     "unstarred": "Star to get notified",

@@ -10,7 +10,7 @@ export default function FooterSection() {
   const { ref, isInView } = useInView();
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
-  const [type, setType] = useState<"fan" | "club" | null>(null);
+  const [type, setType] = useState<"fan" | "club" | null>("fan");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -22,10 +22,7 @@ export default function FooterSection() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!type) {
-      setError(t("footer.errorSelectType"));
-      return;
-    }
+    // default type is "fan"; no explicit selection required
     if (!email.trim()) return;
 
     setLoading(true);
@@ -82,29 +79,7 @@ export default function FooterSection() {
 
           {!submitted ? (
             <>
-              {/* Two role buttons */}
-              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8">
-                <button
-                  onClick={() => handleTypeSelect("club")}
-                  className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-display font-bold text-base transition-all hover:scale-105 active:scale-95 ${
-                    type === "club"
-                      ? "bg-brand-yellow text-brand-dark ring-2 ring-brand-yellow/50"
-                      : "bg-brand-white/10 text-brand-white border border-brand-white/20 hover:border-brand-yellow/40"
-                  }`}
-                >
-                  {t("footer.imClub")}
-                </button>
-                <button
-                  onClick={() => handleTypeSelect("fan")}
-                  className={`px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-display font-bold text-base transition-all hover:scale-105 active:scale-95 ${
-                    type === "fan"
-                      ? "bg-brand-yellow text-brand-dark ring-2 ring-brand-yellow/50"
-                      : "bg-brand-white/10 text-brand-white border border-brand-white/20 hover:border-brand-yellow/40"
-                  }`}
-                >
-                  {t("footer.imFan")}
-                </button>
-              </div>
+              {/* Role selection removed — newsletter defaults to Fan */}
 
               {error && (
                 <p className="font-body text-sm text-red-400 mb-4">{error}</p>
@@ -152,6 +127,7 @@ export default function FooterSection() {
               </p>
               <Link
                 to="/app"
+                onClick={() => window.scrollTo({ top: 0, behavior: "auto" })}
                 className="inline-block px-6 py-2.5 rounded-xl bg-brand-yellow text-brand-dark font-display font-bold text-sm transition-all hover:scale-105 active:scale-95"
               >
                 {t("footer.previewBeta")} →
@@ -182,6 +158,13 @@ export default function FooterSection() {
             className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
           >
             {t("footer.blog")}
+          </Link>
+          <Link
+            to="/app"
+            onClick={() => window.scrollTo({ top: 0, behavior: "auto" })}
+            className="font-body text-sm text-brand-white/40 hover:text-brand-white transition-colors"
+          >
+            {t("footer.app")}
           </Link>
         </div>
         <p className="font-body text-xs text-brand-white/20 mb-2">{t("footer.copyright")}</p>

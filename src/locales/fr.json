@@ -10,12 +10,12 @@
     "successSubtitle": "On vous contacte avant le coup d'envoi.",
     "previewBeta": "D\u00e9couvrir la b\u00eata maintenant",
     "profiles": {
-      "carlosFans": "12.4K fans de foot",
-      "jayFans": "8.9K fans NBA",
+      "carlosFans": "12.4K fans Foot",
+      "jayFans": "8.9K fans Basket",
       "marcusFans": "15.1K fans NFL",
-      "viktorFans": "6.7K fans de rugby",
+      "viktorFans": "6.7K fans Rugby",
       "fanClubName": "Fan Club",
-      "fanClubFans": "23.4K fans de hockey"
+      "fanClubFans": "23.4K fans de Hockey"
     },
     "clubQuestion": "Vous êtes un club ?"
   },
@@ -108,14 +108,14 @@
     "prop3Desc": "Cr\u00e9ez des exp\u00e9riences d'ench\u00e8res directement depuis votre panneau d'administration \u2014 ajoutez une date, un lieu et un nombre de places.",
     "trustedBy": "Reconnu par les clubs",
     "partnerCta": "Devenez Partenaire \u2192",
-    "getInTouch": "Contactez-nous"
+    "getInTouch": "Vous êtes un club ? Contactez-nous"
   },
   "fold": {
     "title": "Vous \u00eates un club ?",
     "subtitleText": "UltraFans est fait pour vous. Contactez-nous \u00e0"
   },
   "footer": {
-    "title": "Rejoignez la liste d'attente",
+    "title": "Rejoignez la liste d'attente des Ultrafans",
     "subtitle": "Obtenez l'acc\u00e8s anticip\u00e9 avant le coup de sifflet.",
     "imClub": "Je suis un Club",
     "imFan": "Je suis un Fan",
@@ -133,6 +133,7 @@
     "about": "\u00c0 propos",
     "careers": "Carri\u00e8res",
     "blog": "Blog",
+    "app": "App",
     "twitter": "X (Twitter)",
     "discord": "Discord",
     "instagram": "Instagram",
@@ -147,7 +148,7 @@
     "about": "\u00c0 propos de"
   },
   "app": {
-    "pageLabel": "Aperçu Bêta",
+    "pageLabel": "Version Beta",
     "title": "Explorez les clubs",
     "subtitle": "Ajoutez vos clubs favoris pour être alerté quand les points UltraFans seront disponibles.",
     "backToHome": "\u2190 Retour à UltraFans",
@@ -160,9 +161,12 @@
       "baseball": "Baseball"
     },
     "countries": {
+      "all": "Tous",
       "uk": "Royaume-Uni",
       "france": "France",
-      "spain": "Espagne"
+      "spain": "Espagne",
+      "belgium": "Belgique",
+      "switzerland": "Suisse"
     },
     "starred": "Vous serez notifié !",
     "unstarred": "Ajouter aux favoris pour être notifié",

@@ -334,6 +334,19 @@
       color: var(--dark);
       opacity: 0.2;
     }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 8px;
+    }
+    footer .footer-links a {
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    footer .footer-links a:hover { color: var(--dark); }
 
     /* Mobile */
     @media (max-width: 600px) {
@@ -452,6 +465,12 @@
 
     <!-- Footer -->
     <footer class="fade-6">
+      <div class="footer-links">
+        <a href="/about.html" id="foot-about">About Us</a>
+        <a href="/careers.html" id="foot-careers">Careers</a>
+        <a href="/blog" id="foot-blog">Blog</a>
+        <a href="/app" id="foot-app">App</a>
+      </div>
       <p class="foot-brand">ULTRAFANS</p>
       <p class="copy" id="foot-copy">&copy; 2026 UltraFans. Paris, France.</p>
     </footer>
@@ -477,7 +496,11 @@
         job2Desc: 'You\'ll build and lead our community strategy from zero. That means growing our waitlist, managing social channels, creating content that resonates with football fans, and forging relationships with fan groups and clubs across Europe.',
         infoH3: 'Don\'t see your role?',
         infoP: 'We\'re always looking for people who are passionate about sports and building things. Send us a note and tell us what you\'d bring to the team.',
-        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+        footCopy: '&copy; 2026 UltraFans. Paris, France.',
+        footAbout: 'About Us',
+        footCareers: 'Careers',
+        footBlog: 'Blog',
+        footApp: 'App'
       },
       fr: {
         taglinePill: 'On recrute',
@@ -495,7 +518,11 @@
         job2Desc: 'Vous construirez et dirigerez notre stratégie communautaire depuis zéro. Cela inclut la croissance de notre liste d\'attente, la gestion des réseaux sociaux, la création de contenu qui résonne avec les fans de football et la création de relations avec les groupes de supporters et les clubs à travers l\'Europe.',
         infoH3: 'Vous ne voyez pas votre poste ?',
         infoP: 'Nous cherchons toujours des personnes passionnées par le sport et la création. Envoyez-nous un message et dites-nous ce que vous apporteriez à l\'équipe.',
-        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+        footCopy: '&copy; 2026 UltraFans. Paris, France.',
+        footAbout: 'À propos',
+        footCareers: 'Carrières',
+        footBlog: 'Blog',
+        footApp: 'App'
       }
     };
 
@@ -524,6 +551,10 @@
       document.getElementById('info-h3').innerHTML = t.infoH3;
       document.getElementById('info-p').innerHTML = t.infoP;
       document.getElementById('foot-copy').innerHTML = t.footCopy;
+      document.getElementById('foot-about').innerHTML = t.footAbout;
+      document.getElementById('foot-careers').innerHTML = t.footCareers;
+      document.getElementById('foot-blog').innerHTML = t.footBlog;
+      document.getElementById('foot-app').innerHTML = t.footApp;
     }
   </script>
 

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { blogPosts } from "@/data/blogPosts";
 import LanguageToggle from "@/components/landing/LanguageToggle";
+import FooterSection from "@/components/landing/FooterSection";
 
 export default function Blog() {
   const { t, i18n } = useTranslation();
@@ -86,13 +87,7 @@ export default function Blog() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-brand-dark/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <Link to="/" className="font-display text-sm font-bold text-brand-dark/40 hover:text-brand-dark transition-colors">
-            {t("blog.backToHome")}
-          </Link>
-        </div>
-      </footer>
+      <FooterSection />
     </main>
   );
 }

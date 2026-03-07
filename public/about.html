@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ULTRAFANS - About Us</title>
-  <meta name="description" content="New revenue for football clubs. Powered by fandom." />
+  <meta name="description" content="New revenue for sport clubs. New experiences for UltraFans." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
@@ -409,6 +409,19 @@
       color: var(--dark);
       opacity: 0.2;
     }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 8px;
+    }
+    footer .footer-links a {
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    footer .footer-links a:hover { color: var(--dark); }
 
     /* Mobile */
     @media (max-width: 600px) {
@@ -485,8 +498,8 @@
 
     <!-- Mission -->
     <section class="mission fade-2">
-      <h1 id="mission-h1">New revenue for football clubs.<br />Powered by fandom.</h1>
-      <p id="mission-p">We're building the <span class="highlight">fan engagement infrastructure</span> that helps football clubs turn their most passionate supporters into a new revenue channel.</p>
+      <h1 id="mission-h1">New revenue for sport clubs.<br />New experiences for fans.</h1>
+      <p id="mission-p">We're building the <span class="highlight">fan engagement infrastructure</span> that helps sport clubs turn their most passionate supporters into a new revenue channel.</p>
     </section>
 
     <!-- Founders -->
@@ -532,6 +545,12 @@
 
     <!-- Footer -->
     <footer class="fade-7">
+      <div class="footer-links">
+        <a href="/about.html" id="foot-about">About Us</a>
+        <a href="/careers.html" id="foot-careers">Careers</a>
+        <a href="/blog" id="foot-blog">Blog</a>
+        <a href="/app" id="foot-app">App</a>
+      </div>
       <p class="foot-brand">ULTRAFANS</p>
       <p class="copy" id="foot-copy">&copy; 2026 UltraFans. Paris, France.</p>
     </footer>
@@ -543,23 +562,31 @@
     var translations = {
       en: {
         taglinePill: 'About Us',
-        missionH1: 'New revenue for football clubs.<br />Powered by fandom.',
-        missionP: 'We\'re building the <span class="highlight">fan engagement infrastructure</span> that helps football clubs turn their most passionate supporters into a new revenue channel.',
+        missionH1: 'New revenue for sport clubs.<br />New experiences for fans.',
+        missionP: 'We\'re building the <span class="highlight">fan engagement infrastructure</span> that helps sport clubs turn their most passionate supporters into a new revenue channel.',
         benBio: 'ESADE MBA. Entrepreneur. Former Financial Manager. Convinced that the most loyal fans in the stadium are also the biggest untapped revenue line. Poussez!',
         nickBio: 'Built tech at the intersection of regulation and sport. Formerly at ANJ, working on international gambling and sports betting policy. Won the PSG Stadium Hackathon. Football is not a hobby, it\'s a lifestyle.',
         badgeText: 'Founders in Residence with Pioneers VC at <strong>Station F, Paris</strong>',
         ctaBtn: 'Get in touch now &rarr;',
-        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+        footCopy: '&copy; 2026 UltraFans. Paris, France.',
+        footAbout: 'About Us',
+        footCareers: 'Careers',
+        footBlog: 'Blog',
+        footApp: 'App'
       },
       fr: {
         taglinePill: 'À propos',
-        missionH1: 'Nouveaux revenus pour les clubs de foot.<br />Propulsés par le fandom.',
+        missionH1: 'Revenus additionnels pour les clubs.<br />Expériences uniques pour les fans.',
         missionP: 'Nous construisons l\'<span class="highlight">infrastructure d\'engagement fan</span> qui aide les clubs de football à transformer leurs supporters les plus passionnés en une nouvelle source de revenus.',
         benBio: 'MBA ESADE. Entrepreneur. Ancien directeur financier. Convaincu que les fans les plus fidèles du stade sont aussi la plus grande opportunité de revenus inexploitée. Poussez !',
         nickBio: 'A construit la tech à l\'intersection de la réglementation et du sport. Ancien à l\'ANJ, travaillant sur la politique internationale des jeux d\'argent et des paris sportifs. Vainqueur du Hackathon Stade PSG. Le football n\'est pas un hobby, c\'est un mode de vie.',
         badgeText: 'Fondateurs en résidence avec Pioneers VC à <strong>Station F, Paris</strong>',
         ctaBtn: 'Contactez-nous maintenant &rarr;',
-        footCopy: '&copy; 2026 UltraFans. Paris, France.'
+        footCopy: '&copy; 2026 UltraFans. Paris, France.',
+        footAbout: 'À propos',
+        footCareers: 'Carrières',
+        footBlog: 'Blog',
+        footApp: 'App'
       }
     };
 
@@ -580,6 +607,10 @@
       document.getElementById('badge-text').innerHTML = t.badgeText;
       document.getElementById('cta-btn').innerHTML = t.ctaBtn;
       document.getElementById('foot-copy').innerHTML = t.footCopy;
+      document.getElementById('foot-about').innerHTML = t.footAbout;
+      document.getElementById('foot-careers').innerHTML = t.footCareers;
+      document.getElementById('foot-blog').innerHTML = t.footBlog;
+      document.getElementById('foot-app').innerHTML = t.footApp;
     }
 
     function openLightbox(img) {

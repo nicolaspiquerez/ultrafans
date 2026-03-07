@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Star } from "lucide-react";
 import { toast } from "sonner";
 import LanguageToggle from "@/components/landing/LanguageToggle";
+import FooterSection from "@/components/landing/FooterSection";
 import { sports, countries, clubs, type Club } from "@/data/clubs";
 import { useFavoriteClubs } from "@/hooks/useFavoriteClubs";
 import { submitTeamSuggestion } from "@/lib/firebase";
@@ -161,23 +162,23 @@ export default function AppPreview() {
   const [activeSport, setActiveSport] = useState(sports[0].id);
   const [activeCountry, setActiveCountry] = useState(countries[0].code);
 
-  const sportClubs = clubs.filter((c) => c.sportId === activeSport);
-  const filteredClubs = sportClubs.filter((c) => c.countryCode === activeCountry);
+  const sportClubs = clubs.filter((c) => c.sportId === activeSport).sort((a, b) => a.name.localeCompare(b.name));
+  const filteredClubs = activeCountry === "all" ? sportClubs : sportClubs.filter((c) => c.countryCode === activeCountry);
   const hasClubsForSport = sportClubs.length > 0;
 
   return (
     <main className="min-h-screen bg-brand-white">
       {/* Header */}
-      <header className="bg-brand-dark py-6 px-6">
+      <header className="bg-brand-yellow py-6 px-6">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link to="/" className="font-display text-xl font-bold text-brand-yellow hover:opacity-80 transition-opacity">
+          <Link to="/" className="font-display text-xl font-bold text-brand-dark hover:opacity-80 transition-opacity">
             UltraFans
           </Link>
           <div className="flex items-center gap-4">
-            <span className="font-display text-sm font-bold text-brand-white/60 uppercase tracking-widest">
+            <span className="font-display text-sm font-bold text-brand-dark/70 uppercase tracking-widest">
               {t("app.pageLabel")}
             </span>
-            <LanguageToggle dark />
+            <LanguageToggle />
           </div>
         </div>
       </header>
@@ -202,22 +203,14 @@ export default function AppPreview() {
         </div>
       </nav>
 
-      {/* Title */}
+      {/* Subtitle only: removed page title per design request */}
       <section className="pt-8 sm:pt-10 pb-2 px-6">
         <div className="max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-dark mb-3"
-          >
-            {t("app.title")}
-          </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-body text-brand-dark/60 text-lg max-w-xl"
+            className="font-body text-brand-dark/60 text-lg md:text-xl max-w-full"
           >
             {t("app.subtitle")}
           </motion.p>
@@ -273,13 +266,7 @@ export default function AppPreview() {
       <SuggestTeamSection />
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-brand-dark/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <Link to="/" className="font-display text-sm font-bold text-brand-dark/40 hover:text-brand-dark transition-colors">
-            {t("app.backToHome")}
-          </Link>
-        </div>
-      </footer>
+      <FooterSection />
     </main>
   );
 }
